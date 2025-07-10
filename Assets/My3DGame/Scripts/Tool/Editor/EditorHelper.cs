@@ -2,6 +2,9 @@ using UnityEditor;
 using UnityEngine;
 using My3DGame.GameData;
 using UnityObject = UnityEngine.Object;
+using System.Text;
+using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace My3DGame.Tool
 {
@@ -20,7 +23,7 @@ namespace My3DGame.Tool
                 if(GUILayout.Button("ADD", GUILayout.Width(uiWidth)))
                 {
                     //데이터 추가 처리
-                    data.AddData("New Data");
+                    data.AddData("NewData");
                     seletion = data.GetDataCount() - 1;
                     source = null;
                 }
@@ -76,6 +79,62 @@ namespace My3DGame.Tool
                 EditorGUILayout.EndVertical();
             }
             EditorGUILayout.EndVertical();
+        }
+
+        //오브젝트 필드에서 입력 받은 어쎗 오브젝트의 Resources폴더 이하의 저장 경로 얻어오기
+        public static string GetPath(UnityObject pClip)
+        {
+            string pathString = string.Empty;
+            pathString = AssetDatabase.GetAssetPath(pClip);
+            Debug.Log($"Asset Full Path: {pathString}");
+
+            string[] path_node = pathString.Split('/');
+            bool findResources = false;
+            for (int i = 0; i < path_node.Length - 1; i++)
+            {
+                if(findResources == false)
+                {
+                    if (path_node[i] == "Resources")
+                    {
+                        findResources = true;
+                        pathString = string.Empty;
+                    }
+                }
+                else
+                {
+                    pathString += path_node[i] + "/";
+                }
+            }
+
+            Debug.Log($"Asset Find Path: {pathString}");
+            return pathString;
+        }
+
+        //데이터 이름 리스트로 enum 구조체 만들기(enumName, builder 바꿔치기)
+        public static void CreateEnumStructure(string enumName, StringBuilder data)
+        {
+            //enum 템플릿 가져오기
+            string templateFilePath = "Assets/My3DGame/Editor/EnumTemplate.txt";
+            string entittyTemplate = File.ReadAllText(templateFilePath);
+
+            entittyTemplate = entittyTemplate.Replace("$ENUM$", enumName);
+            entittyTemplate = entittyTemplate.Replace("$DATA$", data.ToString());
+
+            //경로 체크
+            string folderPath = "Assets/My3DGame/Scripts/GameData/";
+            if(Directory.Exists(folderPath) == false)
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            //파일 체크
+            string filePath = folderPath + enumName + ".cs";
+            if(File.Exists(filePath) == true)
+            {
+                //기존 enum을 지운다
+                File.Delete(filePath);
+            }
+            //enum을 새로 만든다
+            File.WriteAllText(filePath, entittyTemplate);
         }
     }
 }

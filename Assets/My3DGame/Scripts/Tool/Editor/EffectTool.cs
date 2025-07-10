@@ -2,6 +2,8 @@ using UnityEditor;
 using UnityEngine;
 using My3DGame.GameData;
 using UnityObject = UnityEngine.Object;
+using My3DGame.Common;
+using System.Text;
 
 namespace My3DGame.Tool
 {
@@ -66,10 +68,107 @@ namespace My3DGame.Tool
                     effectSource = (GameObject)source;
 
                     //선택된 데이터 설정 레이어
+                    EditorGUILayout.BeginVertical();
+                    {
+                        SP2 = EditorGUILayout.BeginScrollView(SP2);
+                        {
+                            //데이터 파일 체크
+                            if(effectData.GetDataCount() > 0)
+                            {
+                                EditorGUILayout.BeginVertical();
+                                {
+                                    EditorGUILayout.Separator();    //공간 띄우기
+                                    //선택 인덱스 값 쓰기
+                                    EditorGUILayout.LabelField("ID", selection.ToString(), 
+                                        GUILayout.Width(uiWidthLarge));
+                                    //이름(string) 입력창 만들기
+                                    effectData.names[selection] = EditorGUILayout.TextField("이펙트 이름", 
+                                        effectData.names[selection], GUILayout.Width(uiWidthLarge * 1.5f));
+                                    //이펙트 타입(enum) 입력창 만들기
+                                    effectData.effectClips[selection].Type = (EffectType)EditorGUILayout.EnumPopup("이펙트 타입",
+                                        effectData.effectClips[selection].Type,
+                                        GUILayout.Width(uiWidthLarge));
+
+                                    EditorGUILayout.Separator();    //공간 띄우기
+                                    //이펙트 오브젝트 사전 로드
+                                    if (effectSource == null 
+                                        && effectData.effectClips[selection].EffectName != string.Empty)
+                                    {
+                                        effectSource = (GameObject) Resources.Load(
+                                            effectData.effectClips[selection].EffectPath
+                                            + effectData.effectClips[selection].EffectName) ;
+                                    }
+                                    //이펙트 오브젝트 입력창
+                                    effectSource = (GameObject) EditorGUILayout.ObjectField("이펙트",
+                                        effectSource, typeof(GameObject), false,
+                                        GUILayout.Width(uiWidthLarge * 1.5f));
+                                    //이펙트 오브젝트에서 저장경로와 이름 가져오기
+                                    if(effectSource != null)
+                                    {
+                                        effectData.effectClips[selection].EffectName = effectSource.name;
+                                        effectData.effectClips[selection].EffectPath = EditorHelper.GetPath(effectSource);
+                                    }
+                                    else
+                                    {
+                                        effectData.effectClips[selection].EffectName = string.Empty;
+                                        effectData.effectClips[selection].EffectPath = string.Empty;
+                                    }
+                                }
+                                EditorGUILayout.EndVertical();
+                            }
+                        }
+                        EditorGUILayout.EndScrollView();
+                    }
+                    EditorGUILayout.EndVertical();
                 }
                 EditorGUILayout.EndHorizontal();
             }
             EditorGUILayout.EndVertical();
+
+            EditorGUILayout.Separator();    //공간 띄우기
+            //하단 - 로드, 저장 버튼
+            EditorGUILayout.BeginHorizontal();
+            {
+                //로드 버튼
+                if(GUILayout.Button("Reload Settings"))
+                {
+                    //EffectData 객체 다시 생성하고 다시 파일에서 데이터 가져오기
+                    effectData = ScriptableObject.CreateInstance<EffectData>();
+                    effectData.LoadData();
+                    //초기화
+                    selection = 0;
+                    effectSource = null;
+                }
+                //저장 버튼
+                if(GUILayout.Button("Save"))
+                {
+                    //툴에 설정된 값 파일로 저장하기
+                    effectData.SaveData();
+                    //새로 설정된값으로 enum을 새로 만든다
+                    CreateEnumStructure();
+                    //어셋 폴더내용을 새로 강제로 갱신한다
+                    AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
+                }
+            }
+            EditorGUILayout.EndHorizontal();
+        }
+
+        public void CreateEnumStructure()
+        {
+            string enumName = "EffectList";
+
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine();
+            int length = effectData.GetDataCount();
+            for (int i = 0; i < length; i++)
+            {
+                if (effectData.names[i] != string.Empty)
+                {
+                    builder.AppendLine("    " + effectData.names[i] + " = " + i + ",");
+                }
+            }
+            //enumName, builder 바꿔치기
+            EditorHelper.CreateEnumStructure(enumName, builder);
         }
         #endregion
     }

@@ -63,7 +63,7 @@ namespace My3DGame.GameData
             if(asset == null || asset.text == null)
             {
                 //데이터가 없을때 무조건 새로운 데이터 하나 추가
-                AddData("New Effect");
+                AddData("NewEffect");
                 return;
             }
 

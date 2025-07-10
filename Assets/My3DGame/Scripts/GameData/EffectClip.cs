@@ -19,8 +19,8 @@ namespace My3DGame.GameData
         public int Id { get; set; }
         public string Name { get; set; }
         public EffectType Type { get; set; }
-        public string EffectPath { get; set; }
-        public string EffectName { get; set; }
+        public string EffectPath { get; set; }      //이펙트 프리팹 오브젝트 저장 경로
+        public string EffectName { get; set; }      //이펙트 프리팹 오브젝트 이름
         #endregion
 
         //생성자
