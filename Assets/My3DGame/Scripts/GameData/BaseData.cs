@@ -13,7 +13,7 @@ namespace My3DGame.GameData
         #region Variables
         public List<string> names;  //데이터 이름 리스트
 
-        public const string dataDirectory = "/ResourcesData/Resources/Data/";   //데이터 파일 경로
+        public const string dataDirectory = "/My3DGame/ResourcesData/Resources/Data/";   //데이터 파일 경로
         #endregion
 
         //생성자
