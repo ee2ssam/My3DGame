@@ -5,7 +5,7 @@ using My3DGame.Manager;
 namespace My3DGame.GameData
 {
     /// <summary>
-    /// 이펙트 속성 관리하는 클래스
+    /// 이펙트 클립 속성 관리하는 클래스
     /// 속성 : 이펙트 아이디, 이름, 타입, 프리팹 어쎗 이름, 프리팹 어쎗 경로
     /// 기능 : 프리팹 어쎗 로딩, 어쎗 해제, 이펙트 인스턴스
     /// </summary>
