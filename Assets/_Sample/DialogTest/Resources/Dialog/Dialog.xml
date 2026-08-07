@@ -5,14 +5,14 @@
 		<character>1</character>
 		<name>Tom</name>
 		<sentence>It would be a privilege to have my heart broken by you</sentence>
-		<next>-1</next>
+		<next>0</next>
 	</Dialog>
 	<Dialog>
 		<number>0</number>
 		<character>2</character>
 		<name>Cavin</name>
 		<sentence>The only way you're gonna suvivie is to do what you think is right</sentence>
-		<next>-1</next>
+		<next>0</next>
 	</Dialog>
 	<Dialog>
 		<number>0</number>
