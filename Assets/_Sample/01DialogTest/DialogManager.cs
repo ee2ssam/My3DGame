@@ -109,9 +109,9 @@ namespace MySample
         /// 0번 버튼이 눌렸을 때 호출할 함수.
         /// 인덱스 0의 대화를 로드하고 첫 문장을 DrawDialog에 전달해 표시합니다.
         /// </summary>
-        public void OnPressButton0()
+        public void OnPressButton0(int dialogNumber)
         {
-            SetDialog(0);
+            SetDialog(dialogNumber);
 
             if (TryGetNext(out Dialog dlg))
             {

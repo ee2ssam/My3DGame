@@ -11,7 +11,7 @@ namespace MySample
     /// - character == 0 이면 npcImage 비활성
     /// - next == -1 이면 nextButton 비활성
     /// - sentenceText는 타이핑 연출 (연출 중에는 nextButton 비활성)
-    /// - npc 이미지는 Resources/NpcImage 폴더에서 Dialog.character와 파일이름을 매칭하여 로드합니다.
+    /// - npc 이미지는 Resources/Npc 폴더에서 Dialog.character와 파일이름을 매칭하여 로드합니다.
     /// </summary>
     public class DrawDialog : MonoBehaviour
     {
@@ -27,7 +27,7 @@ namespace MySample
         public float typingSpeed = 0.03f;
 
         [Tooltip("Resources 폴더 내 캐릭터 이미지가 들어있는 폴더 이름(예: NpcImage)")]
-        public string npcImageFolder = "NpcImage";
+        public string npcImageFolder = "Npc";
 
         Image _npcImageComponent;
         Coroutine _typingCoroutine;
@@ -87,7 +87,7 @@ namespace MySample
         Sprite LoadNpcSpriteForCharacter(int characterIndex)
         {
             if (string.IsNullOrEmpty(npcImageFolder))
-                npcImageFolder = "NpcImage";
+                npcImageFolder = "Npc";
 
             string[] candidates = new string[] {
                 characterIndex.ToString(),
