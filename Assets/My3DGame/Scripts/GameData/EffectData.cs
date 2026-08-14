@@ -12,7 +12,8 @@ namespace My3DGame
     public class EffectData : BaseData
     {
         #region Variables
-        public List<EffectClip> clips;      //이펙트 데이터 리스트
+        //툴에서 사용하는 이펙트 데이터 리스트
+        public List<EffectClip> clips;      
 
         //파일 (xml, json)
         //리소스 폴더 이하 경로 - Resources.Load 경로
@@ -27,7 +28,7 @@ namespace My3DGame
         public void SaveData()
         {
             //json
-            //클립리스트에 있는 이름을 툴 이름 목록 리스트로 저장
+            //툴 이름 목록 리스트를 읽어서 클립리스트에 있는 이름에 저장
             int length = GetDataCount();
             for (int i = 0; i < length; i++)
             {
@@ -51,6 +52,8 @@ namespace My3DGame
             TextAsset asset = ResourcesManager.Load<TextAsset>(dataPath);
             if(asset == null || asset.text == null)
             {
+                //새로운 빈데이터를 하나 추가
+                AddData("New Effect");
                 return;
             }
 
@@ -58,6 +61,7 @@ namespace My3DGame
             EffectDatabase database = JsonUtility.FromJson<EffectDatabase>(asset.text);
             clips = database.clips;
 
+            //클립리스트에 있는 이름을 읽어서 툴 이름 목록 리스트에 저장
             int length = clips.Count;
             names = new List<string>();
             for (int i = 0; i < length; i++)
@@ -88,13 +92,65 @@ namespace My3DGame
         //데이터 복사하기
         public override void CopyData(int index)
         {
-
+            names.Add(names[index]);    //이름 목록에 선택한 목록 이름 추가
+            clips.Add(CopyClip(index)); //선택한 이펙트 데이터를 리스트 추가
         }
 
         //데이터 제거하기
         public override void RemoveData(int index)
         {
+            //이름 목록에 선택한 목록 이름 제거
+            names.Remove(names[index]); 
+            if (names.Count == 0)
+                names = null;
 
+            //선택한 이펙트 데이터를 리스트 제거
+            clips.Remove(clips[index]);
+            if(clips.Count == 0)
+            {
+                clips = null;
+            }
+        }
+
+        //매개변수로 들어온 데이터를 복사해서 반환하기
+        public EffectClip CopyClip(int index)
+        {
+            //인덱스 체크
+            if(index < 0 || index >= clips.Count)
+                return null;
+
+            EffectClip originClip = clips[index];
+
+            EffectClip newClip = new EffectClip();            
+            newClip.effectType = originClip.effectType;
+            newClip.effectPath = originClip.effectPath;
+            newClip.effectName = originClip.effectName;
+            return newClip;
+        }
+
+        //매개변수로 들어온 데이터를 반환하기
+        public EffectClip GetClip(int index)
+        {
+            //인덱스 체크
+            if (index < 0 || index >= clips.Count)
+                return null;
+
+            //프리팹 로드
+            clips[index].PreLoad();
+
+            return clips[index];
+        }
+
+        //모드 데이터 해제
+        public void ClearData()
+        {
+            foreach(EffectClip clip in clips)
+            {
+                //클립의 프리팹 해제
+                clip.Release();
+            }
+            clips = null;
+            names = null;
         }
     }
 }
