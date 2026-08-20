@@ -77,7 +77,7 @@ namespace My3DGame
                                 EditorGUILayout.LabelField("id", selection.ToString(),
                                     GUILayout.Width(uiWidthLarge));
                                 //데이터 이름
-                                effectData.names[selection] = EditorGUILayout.TextField("이름", effectData.clips[selection].name,
+                                effectData.names[selection] = EditorGUILayout.TextField("이름", effectData.names[selection],
                                     GUILayout.Width(uiWidthLarge * 1.5f));
                                 //이펙트 종류
                                 effectData.clips[selection].effectType = (EffectType)EditorGUILayout.EnumPopup("이펙트 종류", 
@@ -129,6 +129,7 @@ namespace My3DGame
                 {
                     effectData.SaveData();
                     //이름 목록을 enum 만들기
+                    CreateEnumFile();
 
                     //새로운 내용 에디터 프로젝트에 적요
                     AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);  
@@ -136,5 +137,22 @@ namespace My3DGame
             }
             EditorGUILayout.EndHorizontal();
         }
+
+        //이름 목록을 enum 만들기
+        public void CreateEnumFile()
+        {
+            string enumName = "EffectList";
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine();
+            for (int i = 0; i < effectData.names.Count; i++)
+            {
+                if (effectData.names[i] != "")
+                {
+                    builder.AppendLine("            " + effectData.names[i] + "=" + i + ",");
+                }
+            }
+            EditorHelper.CreateEnumStructure(enumName, builder);
+        }
+
     }
 }

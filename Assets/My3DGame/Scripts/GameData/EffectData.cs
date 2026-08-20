@@ -17,7 +17,7 @@ namespace My3DGame
 
         //파일 (xml, json)
         //리소스 폴더 이하 경로 - Resources.Load 경로
-        public const string dataPath = "Data";       
+        public const string dataPath = "Data/EffectData";
         public const string fileName = "EffectData.json";
         #endregion
 
@@ -40,7 +40,8 @@ namespace My3DGame
             EffectDatabase database = new EffectDatabase();
             database.clips = clips;
             //저장할 데이터를 json 타입의 텍스트로 변경
-            string jsonOutput = JsonUtility.ToJson(database.clips);
+            string jsonOutput = JsonUtility.ToJson(database, true);
+            
             //파일 저장
             string filePath = Application.dataPath + dataPath_Asset + fileName;
             File.WriteAllText(filePath, jsonOutput);

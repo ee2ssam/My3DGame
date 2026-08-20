@@ -1,0 +1,18 @@
+{
+    "clips": [
+        {
+            "id": 0,
+            "name": "CubeEffect",
+            "effectType": 0,
+            "effectPath": "Effect/",
+            "effectName": "CubeEffect"
+        },
+        {
+            "id": 1,
+            "name": "Sphere",
+            "effectType": 0,
+            "effectPath": "Effect/",
+            "effectName": "SphereEffect"
+        }
+    ]
+}

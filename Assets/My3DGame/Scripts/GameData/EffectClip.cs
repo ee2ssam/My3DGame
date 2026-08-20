@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace My3DGame
 {
     /// <summary>
     /// 이펙트 데이터 리스트 정의 - json 파일 불러오기,저장하기에서 이용
     /// </summary>
+    [Serializable]
     public class EffectDatabase
     {
         public List<EffectClip> clips;
@@ -14,6 +16,7 @@ namespace My3DGame
     /// <summary>
     /// 이펙트 데이터 정의
     /// </summary>
+    [Serializable]
     public class EffectClip
     {
         #region Variable

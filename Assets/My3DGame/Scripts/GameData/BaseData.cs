@@ -13,7 +13,7 @@ namespace My3DGame
         #region Variables
         public List<string> names;              //이름 목록(리스트)
         //데이터 파일 경로 Asset 폴더 이하 경로
-        public const string dataPath_Asset = "/My3DGame/Resources/Data";
+        public const string dataPath_Asset = "/My3DGame/Resources/Data/";
         #endregion
 
         //생성자
