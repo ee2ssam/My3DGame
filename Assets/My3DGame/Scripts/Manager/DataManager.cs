@@ -12,7 +12,7 @@ namespace My3DGame
         #endregion
 
         #region Unity Event Method
-        private void Start()
+        private void Awake()
         {
             //데이터 사전 로딩
             GetEffectData();
@@ -28,6 +28,7 @@ namespace My3DGame
                 effectData = ScriptableObject.CreateInstance<EffectData>();
                 effectData.LoadData();
             }
+            //effectData.clips
 
             return effectData;
         }

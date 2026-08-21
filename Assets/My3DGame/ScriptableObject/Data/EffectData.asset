@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9b895ef1b05a04785bcafe85c6c9da, type: 3}
+  m_Name: EffectData
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.EffectData
+  names:
+  - CubeEffect
+  - SphereEffect
+  - Cube2Effect
+  clips:
+  - id: 0
+    name: CubeEffect
+    effectType: 0
+    effectPath: Effect/
+    effectName: CubeEffect
+  - id: 1
+    name: SphereEffect
+    effectType: 0
+    effectPath: Effect/
+    effectName: SphereEffect
+  - id: 2
+    name: Cube2Effect
+    effectType: 0
+    effectPath: Effect/
+    effectName: Cube2Effect

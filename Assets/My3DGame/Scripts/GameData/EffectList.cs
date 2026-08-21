@@ -7,7 +7,8 @@ namespace My3DGame
 		None = -1,
 		
             CubeEffect=0,
-            Sphere=1,
+            SphereEffect=1,
+            Cube2Effect=2,
 
 	}
 }

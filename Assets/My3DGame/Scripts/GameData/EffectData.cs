@@ -9,6 +9,7 @@ namespace My3DGame
     /// 속성 : 이펙트 데이터 리스트
     /// 기능 : 데이터 저장하기, 불러오기 
     /// </summary>
+    [CreateAssetMenu(fileName = "New EffectData", menuName = "Data/Effect Data")]
     public class EffectData : BaseData
     {
         #region Variables
@@ -20,6 +21,13 @@ namespace My3DGame
         public const string dataPath = "Data/EffectData";
         public const string fileName = "EffectData.json";
         #endregion
+
+        /*#region Unity Event Method
+        private void OnEnable()
+        {
+            LoadData();
+        }
+        #endregion*/
 
         //생성자
         public EffectData() { }
@@ -48,6 +56,7 @@ namespace My3DGame
         }
 
         //데이터(이펙트 데이터 리스트) 불러오기
+        [ContextMenu("Load")]
         public void LoadData()
         {
             TextAsset asset = ResourcesManager.Load<TextAsset>(dataPath);

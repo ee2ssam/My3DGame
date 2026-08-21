@@ -9,10 +9,17 @@
         },
         {
             "id": 1,
-            "name": "Sphere",
+            "name": "SphereEffect",
             "effectType": 0,
             "effectPath": "Effect/",
             "effectName": "SphereEffect"
+        },
+        {
+            "id": 2,
+            "name": "Cube2Effect",
+            "effectType": 0,
+            "effectPath": "Effect/",
+            "effectName": "Cube2Effect"
         }
     ]
 }

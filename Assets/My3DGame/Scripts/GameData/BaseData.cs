@@ -11,6 +11,7 @@ namespace My3DGame
     public class BaseData : ScriptableObject
     {
         #region Variables
+        [HideInInspector]
         public List<string> names;              //이름 목록(리스트)
         //데이터 파일 경로 Asset 폴더 이하 경로
         public const string dataPath_Asset = "/My3DGame/Resources/Data/";
