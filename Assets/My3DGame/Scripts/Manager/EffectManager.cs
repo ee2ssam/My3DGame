@@ -1,13 +1,25 @@
 using My3DGame;
+using System;
 using UnityEngine;
 
 namespace My3DGame
 {
-    public class EffectManager : Singleton<EffectManager>
+    public class EffectManager : MonoBehaviour //Singleton<EffectManager>
     {
 
         #region Variables
         public EffectData effectDataSo;
+
+        [Header("Listening on Channels")]
+        [SerializeField] private EffectDataChannelSO _effectOneShot;
+        #endregion
+
+        #region Unity Event Method
+        private void Start()
+        {
+            //Event Channel 등록
+            _effectOneShot.OnEffectOneShotRaised += EffectOneShot;
+        }
         #endregion
 
         #region Custom Method

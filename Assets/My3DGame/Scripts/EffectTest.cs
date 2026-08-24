@@ -7,6 +7,9 @@ namespace My3DGame
     /// </summary>
     public class EffectTest : MonoBehaviour
     {
+        [Header("Broadcasting on Channels")]
+        [SerializeField] private EffectDataChannelSO _effectOneShot;
+
         private void Start()
         {
             PlayEffect();
@@ -15,7 +18,8 @@ namespace My3DGame
         public void PlayEffect()
         {
             Vector3 position = new Vector3( 0, 0, 0 );
-            EffectManager.Instance.EffectOneShot(EffectList.SphereEffect, position);            
+            //EffectManager.Instance.EffectOneShot(EffectList.SphereEffect, position);
+            _effectOneShot.RaiseEvent(EffectList.SphereEffect, position);
         }
 
     }
