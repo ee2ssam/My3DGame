@@ -13972,7 +13972,7 @@ Animator:
   m_GameObject: {fileID: 4960498191778115530}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc7904d4658d10149b0bbaaa3427bfd7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -13998,6 +13998,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MySample2.PlayerInput
   inputReader: {fileID: 11400000, guid: c8e3ec4667ed22d43b4d4b98506551fa, type: 2}
   playerControllerInputBlocked: 0
+  m_Movement: {x: 0, y: 0}
+  m_Jump: 0
 --- !u!114 &5136192684675180622
 MonoBehaviour:
   m_ObjectHideFlags: 0

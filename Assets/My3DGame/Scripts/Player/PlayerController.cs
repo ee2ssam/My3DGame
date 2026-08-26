@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MySample2
+namespace My3DGame
 {
     /// <summary>
     /// 플레이어를 관리하는 클래스
@@ -55,6 +55,7 @@ namespace MySample2
         #endregion
 
         #region Property
+        //이동 입력값 체크
         protected bool IsMoveInput
         {
             get { return !Mathf.Approximately(m_Input.Movement.sqrMagnitude, 0f); }
@@ -77,6 +78,12 @@ namespace MySample2
 
             CalculateForwardMovement();
             CalculateVerticalMovement();
+
+            //이동
+            Vector3 movement = transform.forward * Time.deltaTime * m_ForwardSpeed;
+            movement += Vector3.up * Time.deltaTime * m_VerticalSpeed;
+            m_CharCtrl.Move(movement);
+            m_IsGrounded = m_CharCtrl.isGrounded;
 
             SetTargetRotation();
             if (IsOrientationUpdated() && IsMoveInput)
