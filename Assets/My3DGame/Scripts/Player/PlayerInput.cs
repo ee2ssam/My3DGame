@@ -23,13 +23,25 @@ namespace My3DGame
         #region Property
         public Vector2 Movement
         {
-            get { return m_Movement; }
+            get
+            {
+                if (playerControllerInputBlocked)
+                    return Vector2.zero;
+
+                return m_Movement;
+            }
             private set { m_Movement = value; }
         }
 
         public bool Jump
         {
-            get { return m_Jump; }
+            get
+            {
+                if (playerControllerInputBlocked)
+                    return false;
+
+                return m_Jump;
+            }
             private set { m_Jump = value; }
         }
         #endregion

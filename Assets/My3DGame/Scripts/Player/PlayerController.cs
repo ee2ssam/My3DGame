@@ -46,9 +46,15 @@ namespace My3DGame
         const float k_GroundAcceleration = 20f;
         const float k_GroundDeceleration = 25f;
 
-        // Parameters        
-
+        // Parameters
+        //readonly int m_Hash = Animator.StringToHash("");
+        readonly int m_HashInputDetected = Animator.StringToHash("InputDetected");
+        readonly int m_HashForwardSpeed = Animator.StringToHash("ForwardSpeed");
+        readonly int m_HashAngleDeltaRad = Animator.StringToHash("AngleDeltaRad");
         // States
+        readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
+        readonly int m_HashAirborne = Animator.StringToHash("Airborne");
+        readonly int m_HashLanding = Animator.StringToHash("Landing");
 
         // Tags        
         readonly int m_HashBlockInput = Animator.StringToHash("BlockInput");
@@ -79,12 +85,6 @@ namespace My3DGame
             CalculateForwardMovement();
             CalculateVerticalMovement();
 
-            //이동
-            Vector3 movement = transform.forward * Time.deltaTime * m_ForwardSpeed;
-            movement += Vector3.up * Time.deltaTime * m_VerticalSpeed;
-            m_CharCtrl.Move(movement);
-            m_IsGrounded = m_CharCtrl.isGrounded;
-
             SetTargetRotation();
             if (IsOrientationUpdated() && IsMoveInput)
                 UpdateOrientation();
@@ -92,7 +92,7 @@ namespace My3DGame
             TimeoutToIdle();
         }
 
-        /*private void OnAnimatorMove()
+        private void OnAnimatorMove()
         {
             Vector3 movement;
 
@@ -136,10 +136,11 @@ namespace My3DGame
 
             // After the movement store whether or not the character controller is grounded.
             m_IsGrounded = m_CharCtrl.isGrounded;
-        }*/
+        }
         #endregion
 
         #region Custom Method
+        //애니메이션 상태값 읽어 오기
         // Called at the start of FixedUpdate to record the current state of the base layer of the animator.
         void CacheAnimatorState()
         {
@@ -147,11 +148,12 @@ namespace My3DGame
             m_PreviousNextStateInfo = m_NextStateInfo;
             m_PreviousIsAnimatorTransitioning = m_IsAnimatorTransitioning;
 
-            m_CurrentStateInfo = m_Animator.GetCurrentAnimatorStateInfo(0);
-            m_NextStateInfo = m_Animator.GetNextAnimatorStateInfo(0);
-            m_IsAnimatorTransitioning = m_Animator.IsInTransition(0);
+            m_CurrentStateInfo = m_Animator.GetCurrentAnimatorStateInfo(0); //현재 플레이되는 애니메이션 상태 정보
+            m_NextStateInfo = m_Animator.GetNextAnimatorStateInfo(0);       //다음에 플레이되는 애니메이션 상태 정보
+            m_IsAnimatorTransitioning = m_Animator.IsInTransition(0);       //현재 전이중인가
         }
 
+        //애니메이션 상태에 따른 인풋 제어
         // Called after the animator state has been cached to determine whether this script should block user input.
         void UpdateInputBlocking()
         {
@@ -177,7 +179,7 @@ namespace My3DGame
             m_ForwardSpeed = Mathf.MoveTowards(m_ForwardSpeed, m_DesiredForwardSpeed, acceleration * Time.deltaTime);
 
             // Set the animator parameter to control what animation is being played.
-            
+            m_Animator.SetFloat(m_HashForwardSpeed, m_ForwardSpeed);
         }
 
         // Called each physics step.
@@ -259,22 +261,22 @@ namespace My3DGame
             m_TargetRotation = targetRotation;
         }
 
+        //애니메이션 상태에 따른 회전 제어
         // Called each physics step to help determine whether Ellen can turn under player input.
         bool IsOrientationUpdated()
         {
-            //bool updateOrientationForLocomotion = !m_IsAnimatorTransitioning && m_CurrentStateInfo.shortNameHash == m_HashLocomotion || m_NextStateInfo.shortNameHash == m_HashLocomotion;
-            //bool updateOrientationForAirborne = !m_IsAnimatorTransitioning && m_CurrentStateInfo.shortNameHash == m_HashAirborne || m_NextStateInfo.shortNameHash == m_HashAirborne;
-            //bool updateOrientationForLanding = !m_IsAnimatorTransitioning && m_CurrentStateInfo.shortNameHash == m_HashLanding || m_NextStateInfo.shortNameHash == m_HashLanding;
+            bool updateOrientationForLocomotion = !m_IsAnimatorTransitioning && m_CurrentStateInfo.shortNameHash == m_HashLocomotion || m_NextStateInfo.shortNameHash == m_HashLocomotion;
+            bool updateOrientationForAirborne = !m_IsAnimatorTransitioning && m_CurrentStateInfo.shortNameHash == m_HashAirborne || m_NextStateInfo.shortNameHash == m_HashAirborne;
+            bool updateOrientationForLanding = !m_IsAnimatorTransitioning && m_CurrentStateInfo.shortNameHash == m_HashLanding || m_NextStateInfo.shortNameHash == m_HashLanding;
 
-            //return updateOrientationForLocomotion || updateOrientationForAirborne || updateOrientationForLanding;// || m_InCombo && !m_InAttack;
-            return true;
+            return updateOrientationForLocomotion || updateOrientationForAirborne || updateOrientationForLanding;// || m_InCombo && !m_InAttack;            
         }
 
         // Called each physics step after SetTargetRotation if there is move input and Ellen is in the correct animator state according to IsOrientationUpdated.
         void UpdateOrientation()
         {
             //m_Animator
-            
+            m_Animator.SetFloat(m_HashAngleDeltaRad, m_AngleDiff * Mathf.Deg2Rad);
 
             Vector3 localInput = new Vector3(m_Input.Movement.x, 0f, m_Input.Movement.y);
             float groundedTurnSpeed = Mathf.Lerp(maxTurnSpeed, minTurnSpeed, m_ForwardSpeed / m_DesiredForwardSpeed);
@@ -286,7 +288,11 @@ namespace My3DGame
 
         void TimeoutToIdle()
         {
-            
+            bool inputDetected = IsMoveInput;
+
+
+
+            m_Animator.SetBool(m_HashInputDetected, inputDetected);
         }
         #endregion
     }
