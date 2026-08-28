@@ -14017,6 +14017,7 @@ MonoBehaviour:
   jumpSpeed: 10
   minTurnSpeed: 400
   maxTurnSpeed: 1200
+  idleTimer: 6
 --- !u!4 &5163306488451479910
 Transform:
   m_ObjectHideFlags: 0

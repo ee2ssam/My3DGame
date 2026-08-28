@@ -46,11 +46,18 @@ namespace My3DGame
         const float k_GroundAcceleration = 20f;
         const float k_GroundDeceleration = 25f;
 
+        //idle Timer
+        [SerializeField] private float idleTimer = 3f;
+        private float countdown = 0f;
+
+
         // Parameters
         //readonly int m_Hash = Animator.StringToHash("");
         readonly int m_HashInputDetected = Animator.StringToHash("InputDetected");
         readonly int m_HashForwardSpeed = Animator.StringToHash("ForwardSpeed");
         readonly int m_HashAngleDeltaRad = Animator.StringToHash("AngleDeltaRad");
+        readonly int m_HashTimeoutToIdle = Animator.StringToHash("TimeoutToIdle");
+
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
         readonly int m_HashAirborne = Animator.StringToHash("Airborne");
@@ -290,6 +297,20 @@ namespace My3DGame
         {
             bool inputDetected = IsMoveInput;
 
+            if(inputDetected == false)
+            {
+                countdown += Time.deltaTime;
+                if(countdown >= idleTimer)
+                {
+                    m_Animator.SetTrigger(m_HashTimeoutToIdle);
+                }
+            }
+            else
+            {
+                //타이머 초기화
+                countdown = 0f;
+                m_Animator.ResetTrigger(m_HashTimeoutToIdle);
+            }
 
 
             m_Animator.SetBool(m_HashInputDetected, inputDetected);
