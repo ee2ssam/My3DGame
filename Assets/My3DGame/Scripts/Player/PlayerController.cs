@@ -47,8 +47,8 @@ namespace My3DGame
         const float k_GroundDeceleration = 25f;
 
         //idle Timer
-        [SerializeField] private float idleTimer = 3f;
-        private float countdown = 0f;
+        [SerializeField] private float idleTimeout = 3f;
+        private float m_IdleTimer = 0f;
 
 
         // Parameters
@@ -57,6 +57,8 @@ namespace My3DGame
         readonly int m_HashForwardSpeed = Animator.StringToHash("ForwardSpeed");
         readonly int m_HashAngleDeltaRad = Animator.StringToHash("AngleDeltaRad");
         readonly int m_HashTimeoutToIdle = Animator.StringToHash("TimeoutToIdle");
+        readonly int m_HashVerticalSpeed = Animator.StringToHash("VerticalSpeed");
+        readonly int m_HashGrounded = Animator.StringToHash("Grounded");
 
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
@@ -143,6 +145,14 @@ namespace My3DGame
 
             // After the movement store whether or not the character controller is grounded.
             m_IsGrounded = m_CharCtrl.isGrounded;
+
+            //애니메이터값 설정
+            if(m_IsGrounded == false)
+            {
+                m_Animator.SetFloat(m_HashVerticalSpeed, m_VerticalSpeed);
+            }
+
+            m_Animator.SetBool(m_HashGrounded, m_IsGrounded);
         }
         #endregion
 
@@ -299,8 +309,8 @@ namespace My3DGame
 
             if(inputDetected == false)
             {
-                countdown += Time.deltaTime;
-                if(countdown >= idleTimer)
+                m_IdleTimer += Time.deltaTime;
+                if(m_IdleTimer >= idleTimeout)
                 {
                     m_Animator.SetTrigger(m_HashTimeoutToIdle);
                 }
@@ -308,7 +318,7 @@ namespace My3DGame
             else
             {
                 //타이머 초기화
-                countdown = 0f;
+                m_IdleTimer = 0f;
                 m_Animator.ResetTrigger(m_HashTimeoutToIdle);
             }
 
