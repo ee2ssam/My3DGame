@@ -8,7 +8,7 @@ namespace My3DGame
     /// GameInput_Actions의 인풋 값을 읽는 스크립터블 오브젝트
     /// </summary>
     [CreateAssetMenu(fileName = "InputReader", menuName = "Input/InputReader")]
-    public class InputReader : ScriptableObject, GameInput_Actions.IPlayerActions, GameInput_Actions.IUIActions
+    public class InputReader : ScriptableObject, GameInput_Actions.IPlayerActions, GameInput_Actions.IUIActions, GameInput_Actions.ICMActions
     {
         #region Variables
         protected GameInput_Actions _input;
@@ -17,6 +17,9 @@ namespace My3DGame
         public event UnityAction<Vector2> MoveEvent = delegate { };
         public event UnityAction JumpEvent = delegate { };
         public event UnityAction JumpCanceledEvent = delegate { };
+
+        //CM Action 입력시 실행되는 이벤트 함수
+        public event UnityAction<Vector2> LookEvent = delegate { };
         #endregion
 
         #region Unity Event Method
@@ -26,6 +29,7 @@ namespace My3DGame
             {
                 _input = new GameInput_Actions();
                 _input.Player.SetCallbacks(this);
+                _input.CM.SetCallbacks(this);
                 _input.UI.SetCallbacks(this);
             }
 
@@ -43,6 +47,7 @@ namespace My3DGame
         public void DisableAllInput()
         {
             _input.Player.Disable();
+            _input.CM.Disable();
             _input.UI.Disable();
         }
 
@@ -52,6 +57,7 @@ namespace My3DGame
             DisableAllInput();
 
             _input.Player.Enable();
+            _input.CM.Enable();
         }
 
         //UI 인풋 활성화
@@ -89,6 +95,18 @@ namespace My3DGame
         }
 
         public void OnCancel(InputAction.CallbackContext context)
+        {
+            
+        }
+        #endregion
+
+        #region Action Map - CM
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            LookEvent.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnZoom(InputAction.CallbackContext context)
         {
             
         }

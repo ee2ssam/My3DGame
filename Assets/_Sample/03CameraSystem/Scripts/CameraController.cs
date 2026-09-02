@@ -12,7 +12,7 @@ namespace MySample
         protected PlayerInput m_Input;
 
         [Header("Cinemachine")]
-        public GameObject cinemachineCameraTarget;  //씨네머신 트래킹 타겟 오브젝트
+        public Transform cinemachineCameraTarget;  //씨네머신 트래킹 타겟 오브젝트
 
         [SerializeField] private float topClamp = 70.0f;
         [SerializeField] private float bottomClamp = -30.0f;
@@ -34,7 +34,7 @@ namespace MySample
         private void Start()
         {
             //초기화
-            m_CinemachineTargetYaw = cinemachineCameraTarget.transform.rotation.eulerAngles.y;
+            m_CinemachineTargetYaw = cinemachineCameraTarget.rotation.eulerAngles.y;
         }
 
         private void LateUpdate()
@@ -47,7 +47,28 @@ namespace MySample
         //카메라 위치 제어
         void CameraRotation()
         {
+            //입력값 처리
+            if(m_Input.Look.sqrMagnitude >= _thershold && lockCameraPosition == false)
+            {
+                float deltaTimeMultiplier = 1.0f;
+                m_CinemachineTargetYaw += m_Input.Look.x * deltaTimeMultiplier;
+                m_CinemachineTargetPitch += m_Input.Look.y * deltaTimeMultiplier;
+            }
 
+            m_CinemachineTargetYaw = ClampAngle(m_CinemachineTargetYaw, float.MinValue, float.MaxValue);
+            m_CinemachineTargetPitch = ClampAngle(m_CinemachineTargetPitch, bottomClamp, topClamp);
+
+            cinemachineCameraTarget.rotation = Quaternion.Euler(m_CinemachineTargetPitch + cameraAngleOverride,
+                m_CinemachineTargetYaw, 0f);
+        }
+
+        //각도 Clamp 기능
+        private float ClampAngle(float lfAngle, float lfMin, float lfMax)
+        {
+            if (lfAngle < -360f) lfAngle += 360f;
+            if (lfAngle > 360f) lfAngle -= 360f;
+
+            return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
         #endregion
 

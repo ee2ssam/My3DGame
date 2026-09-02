@@ -281,7 +281,7 @@
                     "id": "87a83127-1703-4415-b02d-37c2fabb3822",
                     "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "DeltaTimeScale,ScaleVector2(x=0.1,y=0.1)",
+                    "processors": "ScaleVector2(x=0.05,y=0.05),InvertVector2(invertX=false)",
                     "groups": ";Keyboard&Mouse",
                     "action": "Look",
                     "isComposite": false,

@@ -16,8 +16,11 @@ namespace My3DGame
         public bool playerControllerInputBlocked;
 
         //Move
-        [SerializeField] private Vector2 m_Movement;
-        [SerializeField] private bool m_Jump;
+        private Vector2 m_Movement;
+        private bool m_Jump;
+
+        //Look
+        [SerializeField] private Vector2 m_Look;
         #endregion
 
         #region Property
@@ -44,6 +47,18 @@ namespace My3DGame
             }
             private set { m_Jump = value; }
         }
+
+        public Vector2 Look
+        {
+            get
+            {
+                if (playerControllerInputBlocked)
+                    return Vector2.zero;
+
+                return m_Look;
+            }
+            private set { m_Look = value; }
+        }
         #endregion
 
         #region Unity Event Method
@@ -53,6 +68,7 @@ namespace My3DGame
             inputReader.MoveEvent += OnMove;
             inputReader.JumpEvent += OnJumpStarted;
             inputReader.JumpCanceledEvent += OnJumpCanceled;
+            inputReader.LookEvent += OnLook;
         }
 
         private void OnDisable()
@@ -61,6 +77,7 @@ namespace My3DGame
             inputReader.MoveEvent -= OnMove;
             inputReader.JumpEvent -= OnJumpStarted;
             inputReader.JumpCanceledEvent -= OnJumpCanceled;
+            inputReader.LookEvent -= OnLook;
 
         }
         #endregion
@@ -79,6 +96,11 @@ namespace My3DGame
         private void OnJumpCanceled()
         {
             Jump = false;
+        }
+
+        private void OnLook(Vector2 look)
+        {
+            Look = look;
         }
         #endregion
     }
