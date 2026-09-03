@@ -50,6 +50,9 @@ namespace My3DGame
         [SerializeField] private float idleTimeout = 3f;
         private float m_IdleTimer = 0f;
 
+        //Move
+        private Camera m_MainCamera;
+
 
         // Parameters
         //readonly int m_Hash = Animator.StringToHash("");
@@ -84,6 +87,8 @@ namespace My3DGame
             m_Input = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
             m_CharCtrl = GetComponent<CharacterController>();
+
+            m_MainCamera = Camera.main;
         }
 
         private void FixedUpdate()
@@ -248,8 +253,10 @@ namespace My3DGame
             Vector2 moveInput = m_Input.Movement;
             Vector3 localMovementDirection = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
 
-            //Vector3 forward = Quaternion.Euler(0f, cameraSettings.Current.m_XAxis.Value, 0f) * Vector3.forward;
-            Vector3 forward = Quaternion.Euler(localMovementDirection.x, localMovementDirection.y, localMovementDirection.z) * Vector3.forward;
+            //카메라가 바라보는 앞 방향을 바라본다
+            Vector3 forward = Quaternion.Euler(0f, m_MainCamera.transform.eulerAngles.y, 0f) * Vector3.forward;
+            //인풋이 들어오는 방향을 바라본다
+            //Vector3 forward = Quaternion.Euler(localMovementDirection.x, localMovementDirection.y, localMovementDirection.z) * Vector3.forward;
             forward.y = 0f;
             forward.Normalize();
 

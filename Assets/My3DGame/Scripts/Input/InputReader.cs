@@ -110,6 +110,11 @@ namespace My3DGame
         {
             
         }
+
+        public void OnFreeLook(InputAction.CallbackContext context)
+        {
+            
+        }
         #endregion
     }
 }

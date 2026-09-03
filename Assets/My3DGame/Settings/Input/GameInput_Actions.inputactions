@@ -210,7 +210,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "15cef263-9014-4fd5-94d9-4e4a6234a6ef",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -255,6 +255,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "FreeLook",
+                    "type": "Value",
+                    "id": "cf6464c2-0d9a-4568-b0a0-f3797a1a61f0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Zoom",
                     "type": "Value",
                     "id": "10079629-574e-4f5f-8af1-221ef727858f",
@@ -284,6 +293,28 @@
                     "processors": "ScaleVector2(x=0.05,y=0.05),InvertVector2(invertX=false)",
                     "groups": ";Keyboard&Mouse",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf7228d8-2e24-4bc7-84c0-5280a9ab0d3c",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=100,y=100)",
+                    "groups": ";Gamepad",
+                    "action": "FreeLook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c540eb4-00a6-4e7f-95fe-e257f36de5f8",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=0.03,y=0.03),DeltaTimeScale",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "FreeLook",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

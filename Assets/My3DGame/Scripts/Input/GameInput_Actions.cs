@@ -296,7 +296,7 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""15cef263-9014-4fd5-94d9-4e4a6234a6ef"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -341,6 +341,15 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""FreeLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""cf6464c2-0d9a-4568-b0a0-f3797a1a61f0"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Zoom"",
                     ""type"": ""Value"",
                     ""id"": ""10079629-574e-4f5f-8af1-221ef727858f"",
@@ -370,6 +379,28 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
                     ""processors"": ""ScaleVector2(x=0.05,y=0.05),InvertVector2(invertX=false)"",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf7228d8-2e24-4bc7-84c0-5280a9ab0d3c"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=100,y=100)"",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""FreeLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c540eb4-00a6-4e7f-95fe-e257f36de5f8"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=0.03,y=0.03),DeltaTimeScale"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""FreeLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -472,6 +503,7 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
         // CM
         m_CM = asset.FindActionMap("CM", throwIfNotFound: true);
         m_CM_Look = m_CM.FindAction("Look", throwIfNotFound: true);
+        m_CM_FreeLook = m_CM.FindAction("FreeLook", throwIfNotFound: true);
         m_CM_Zoom = m_CM.FindAction("Zoom", throwIfNotFound: true);
     }
 
@@ -770,6 +802,7 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_CM;
     private List<ICMActions> m_CMActionsCallbackInterfaces = new List<ICMActions>();
     private readonly InputAction m_CM_Look;
+    private readonly InputAction m_CM_FreeLook;
     private readonly InputAction m_CM_Zoom;
     /// <summary>
     /// Provides access to input actions defined in input action map "CM".
@@ -786,6 +819,10 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CM/Look".
         /// </summary>
         public InputAction @Look => m_Wrapper.m_CM_Look;
+        /// <summary>
+        /// Provides access to the underlying input action "CM/FreeLook".
+        /// </summary>
+        public InputAction @FreeLook => m_Wrapper.m_CM_FreeLook;
         /// <summary>
         /// Provides access to the underlying input action "CM/Zoom".
         /// </summary>
@@ -819,6 +856,9 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @FreeLook.started += instance.OnFreeLook;
+            @FreeLook.performed += instance.OnFreeLook;
+            @FreeLook.canceled += instance.OnFreeLook;
             @Zoom.started += instance.OnZoom;
             @Zoom.performed += instance.OnZoom;
             @Zoom.canceled += instance.OnZoom;
@@ -836,6 +876,9 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @FreeLook.started -= instance.OnFreeLook;
+            @FreeLook.performed -= instance.OnFreeLook;
+            @FreeLook.canceled -= instance.OnFreeLook;
             @Zoom.started -= instance.OnZoom;
             @Zoom.performed -= instance.OnZoom;
             @Zoom.canceled -= instance.OnZoom;
@@ -995,6 +1038,13 @@ public partial class @GameInput_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "FreeLook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFreeLook(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Zoom" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
