@@ -214,7 +214,7 @@ namespace My3DGame
             if (m_IsGrounded)
             {
                 // When grounded we apply a slight negative vertical speed to make Ellen "stick" to the ground.
-                m_VerticalSpeed = -gravity * k_StickingGravityProportion;
+                m_VerticalSpeed = -gravity * k_StickingGravityProportion;              
 
                 // If jump is held, Ellen is ready to jump and not currently in the middle of a melee combo...
                 if (m_Input.Jump && m_ReadyToJump)// && !m_InCombo)
