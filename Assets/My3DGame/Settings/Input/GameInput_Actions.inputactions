@@ -341,6 +341,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlayerAgent",
+            "id": "e1ee8949-f479-42b1-b626-88d5711a892b",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "5f345191-2839-4c96-83fc-b60a08d81d41",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6ec5b86e-7bab-4227-98e3-9ab9eb436a4d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -80,6 +80,12 @@ namespace My3DGame
             inputReader.LookEvent -= OnLook;
 
         }
+
+        private void Start()
+        {
+            //인풋 활성화
+            inputReader.EnablePlayerInput();
+        }
         #endregion
 
         #region Custom Method

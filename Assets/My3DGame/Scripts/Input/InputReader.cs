@@ -8,7 +8,8 @@ namespace My3DGame
     /// GameInput_Actions의 인풋 값을 읽는 스크립터블 오브젝트
     /// </summary>
     [CreateAssetMenu(fileName = "InputReader", menuName = "Input/InputReader")]
-    public class InputReader : ScriptableObject, GameInput_Actions.IPlayerActions, GameInput_Actions.IUIActions, GameInput_Actions.ICMActions
+    public class InputReader : ScriptableObject, GameInput_Actions.IPlayerActions, GameInput_Actions.IUIActions, GameInput_Actions.ICMActions,
+        GameInput_Actions.IPlayerAgentActions
     {
         #region Variables
         protected GameInput_Actions _input;
@@ -20,6 +21,9 @@ namespace My3DGame
 
         //CM Action 입력시 실행되는 이벤트 함수
         public event UnityAction<Vector2> LookEvent = delegate { };
+
+        //PlayerAgent Action 입력시 실행되는 이벤트 함수
+        public event UnityAction ClickEvent = delegate { };
         #endregion
 
         #region Unity Event Method
@@ -31,9 +35,10 @@ namespace My3DGame
                 _input.Player.SetCallbacks(this);
                 _input.CM.SetCallbacks(this);
                 _input.UI.SetCallbacks(this);
+                _input.PlayerAgent.SetCallbacks(this);
             }
 
-            EnablePayerInput();
+            //EnablePlayerInput();
         }
 
         private void OnDisable()
@@ -49,10 +54,11 @@ namespace My3DGame
             _input.Player.Disable();
             _input.CM.Disable();
             _input.UI.Disable();
+            _input.PlayerAgent.Disable();
         }
 
         //플레이어 인풋 활성화
-        public void EnablePayerInput()
+        public void EnablePlayerInput()
         {
             DisableAllInput();
 
@@ -66,6 +72,14 @@ namespace My3DGame
             DisableAllInput();
 
             _input.UI.Enable();
+        }
+
+        //플레이어에이전트 인풋 활성화
+        public void EnablePlayerAgentInput()
+        {
+            DisableAllInput();
+
+            _input.PlayerAgent.Enable();
         }
         #endregion
 
@@ -114,6 +128,16 @@ namespace My3DGame
         public void OnFreeLook(InputAction.CallbackContext context)
         {
             
+        }
+        #endregion
+
+        #region Action Map - PlayerAgent
+        public void OnClick(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                ClickEvent.Invoke();
+            }
         }
         #endregion
     }
