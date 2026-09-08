@@ -1,5 +1,7 @@
+using My3DGame;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 namespace MySample
 {
@@ -20,6 +22,13 @@ namespace MySample
 
         //그라운드 레이어 체크
         [SerializeField] protected LayerMask groundLayerMask;
+
+        //클릭 이펙트
+        protected GameObject m_ClickEffect = null;
+
+        //
+        [Header("Broadcasting on Channels")]
+        [SerializeField] private EffectDataChannelSO _effectOneShot;    //클릭 이펙트
 
         // Parameters
         //readonly int m_Hash = Animator.StringToHash("");
@@ -58,8 +67,7 @@ namespace MySample
 
         private void FixedUpdate()
         {
-            
-
+            MovementInput();
             TimeoutToIdle();
         }
 
@@ -70,13 +78,18 @@ namespace MySample
             m_Animator.rootPosition = position;
             transform.position = position;
 
+            //도착 체크
             if(m_Agent.remainingDistance > m_Agent.stoppingDistance)
             {
                 m_CharCtrl.Move(m_Agent.velocity * Time.deltaTime);
             }
             else
             {
-                m_CharCtrl.Move(Vector3.zero);
+                //도착
+                //m_CharCtrl.Move(Vector3.zero);
+                m_Agent.ResetPath();
+                if(m_ClickEffect)
+                    Destroy(m_ClickEffect);
             }
             m_Animator.SetFloat(m_HashForwardSpeed, m_Agent.velocity.magnitude);
 
@@ -87,11 +100,46 @@ namespace MySample
         #endregion
 
         #region Custom Method
+        //입력
+        void MovementInput()
+        {
+            if(m_Input.Click)
+            {
+                //마우스의 위치 가져오기
+                Vector3 mousePosition = Mouse.current.position.ReadValue();
+                //마우스 위치에서 월드 포지션 얻어오기
+                Ray ray = m_MainCamera.ScreenPointToRay(mousePosition);
+                RaycastHit hit;
+                if(Physics.Raycast(ray, out hit, 100f, groundLayerMask))
+                {
+                    //Agent의 이동 목표 지정
+                    m_Agent.SetDestination(hit.point);
+
+                    //클릭 이펙트 플레이
+                    PlayClickEffect(hit.point);                    
+                }
+
+                //초기화
+                m_Input.Click = false;
+            }
+        }
+
+        //대기
         void TimeoutToIdle()
         {
             bool inputDetected = IsMoveInput;            
 
             m_Animator.SetBool(m_HashInputDetected, inputDetected);
+        }
+
+        //클릭 이펙트 플레이
+        void PlayClickEffect(Vector3 position)
+        {
+            if (m_ClickEffect)
+                Destroy(m_ClickEffect);
+
+            m_ClickEffect = _effectOneShot.RaiseEvent(EffectList.ClickEffect, position + new Vector3(0f, 0.1f, 0f));
+            //Destroy(m_ClickEffect, 2f);
         }
         #endregion
     }

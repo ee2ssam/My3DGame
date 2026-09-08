@@ -2,10 +2,10 @@
     "clips": [
         {
             "id": 0,
-            "name": "CubeEffect",
+            "name": "ClickEffect",
             "effectType": 0,
             "effectPath": "Effect/",
-            "effectName": "CubeEffect"
+            "effectName": "ClickEffect"
         },
         {
             "id": 1,

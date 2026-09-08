@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: EffectData
   m_EditorClassIdentifier: Assembly-CSharp::My3DGame.EffectData
   names:
-  - CubeEffect
+  - ClickEffect
   - SphereEffect
   - Cube2Effect
   clips:
   - id: 0
-    name: CubeEffect
+    name: ClickEffect
     effectType: 0
     effectPath: Effect/
-    effectName: CubeEffect
+    effectName: ClickEffect
   - id: 1
     name: SphereEffect
     effectType: 0
