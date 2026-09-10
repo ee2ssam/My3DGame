@@ -14284,6 +14284,7 @@ GameObject:
   - component: {fileID: 55035552146075718}
   - component: {fileID: 5136192684675180622}
   - component: {fileID: 5136192684675180621}
+  - component: {fileID: 5136192684675180623}
   m_Layer: 9
   m_Name: Ellen
   m_TagString: Untagged
@@ -14395,6 +14396,21 @@ MonoBehaviour:
   minTurnSpeed: 400
   maxTurnSpeed: 1200
   idleTimeout: 3
+--- !u!114 &5136192684675180623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960498191778115530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a9e6c9503d15249befb29b43458a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.Damageable
+  _healthCongfigSO: {fileID: 11400000, guid: 99b9f4acbecebda4ea067e76ec45b51e, type: 2}
+  _currentHealthSO: {fileID: 0}
+  _invulnerableTimer: 0.2
 --- !u!4 &5163306488451479910
 Transform:
   m_ObjectHideFlags: 0

@@ -53,6 +53,8 @@ namespace My3DGame
         //Move
         private Camera m_MainCamera;
 
+        //Damage
+        protected Damageable m_Damageable;
 
         // Parameters
         //readonly int m_Hash = Animator.StringToHash("");
@@ -87,8 +89,23 @@ namespace My3DGame
             m_Input = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
             m_CharCtrl = GetComponent<CharacterController>();
+            m_Damageable = GetComponent<Damageable>();
 
             m_MainCamera = Camera.main;
+        }
+
+        private void OnEnable()
+        {
+            //이벤트 함수 등록
+            m_Damageable.OnDamaged += Damaged;
+            m_Damageable.OnDie += Die;
+        }
+
+        private void OnDisable()
+        {
+            //이벤트 함수 제거
+            m_Damageable.OnDamaged -= Damaged;
+            m_Damageable.OnDie -= Die;
         }
 
         private void FixedUpdate()
@@ -331,6 +348,18 @@ namespace My3DGame
 
 
             m_Animator.SetBool(m_HashInputDetected, inputDetected);
+        }
+
+        //데미지 처리
+        private void Damaged(float damage, GameObject damageSource)
+        {
+
+        }
+
+        //죽음 처리
+        private void Die()
+        {
+
         }
         #endregion
     }
