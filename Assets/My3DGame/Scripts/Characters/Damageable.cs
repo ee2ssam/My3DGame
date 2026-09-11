@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace My3DGame
 {
@@ -18,9 +17,15 @@ namespace My3DGame
         private float m_CountDown = 0f;
 
         //이벤트 함수
-        public UnityAction<float, GameObject> OnDamaged;
-        public UnityAction OnDie;
+        //public UnityAction<float, GameObject> OnDamaged;
+        //public UnityAction OnDie;
+        [Header("Broadcasting On Channels")]
+        [SerializeField] private DamagedEventChannelSO _damageEventSO;
+        [SerializeField] private VoidEventChannelSO _deathEventSO;
+        [SerializeField] private VoidEventChannelSO _healEventSO;
 
+        [Header("Listening To Channels")]
+        [SerializeField] private FloatEventChannelSO _restoreHealthEventSO;
         #endregion
 
         #region Property        
@@ -42,8 +47,26 @@ namespace My3DGame
             }
         }
 
+        private void OnEnable()
+        {
+            //ScriptableObject 이벤트 채널 등록
+            if (_restoreHealthEventSO != null)
+                _restoreHealthEventSO.OnEventRaised += Cure;
+        }
+
+        private void OnDisable()
+        {
+            //ScriptableObject 이벤트 채널 제거
+            if (_restoreHealthEventSO != null)
+                _restoreHealthEventSO.OnEventRaised -= Cure;
+        }
+
         private void Update()
         {
+            //죽음 체크
+            if (IsDeath)
+                return;
+
             //무적 모드 발동시 무적 타이머 작동
             if (IsInvulnerable)
             {
@@ -55,8 +78,7 @@ namespace My3DGame
                     //타이머 초기화
                     m_CountDown = 0f;
                 }
-            }     
-            
+            }
         }
         #endregion
 
@@ -73,8 +95,10 @@ namespace My3DGame
             _currentHealthSO.InflictDamage(damage);
             Debug.Log($"{gameObject.name}s Health : {_currentHealthSO.CurrentHealth}");
 
-            //데미지 처리 (VFX, SFX, 애니메이션)
-            OnDamaged?.Invoke(damage, damageSource);
+            //데미지 처리 (VFX, SFX, 애니메이션, UI)
+            //OnDamaged?.Invoke(damage, damageSource);            //UnityAction 이벤트 함수
+            if(_damageEventSO != null)
+                _damageEventSO.RaiseEvent(damage, damageSource);    //ScriptableObject 이벤트 채널
 
             //죽음 처리
             if (_currentHealthSO.CurrentHealth <= 0f && IsDeath == false)
@@ -88,9 +112,33 @@ namespace My3DGame
             IsDeath = true;
 
             //데미지 처리 (VFX, SFX, 애니메이션)
-            OnDie?.Invoke();
+            //OnDie?.Invoke();                //UnityAction 이벤트 함수
+            if (_deathEventSO != null)
+                _deathEventSO.RaiseEvent();     //ScriptableObject 이벤트 채널
 
         }
+
+        //원샷원킬
+        public void Kill()
+        {
+            TakeDamage(_currentHealthSO.CurrentHealth, null);
+        }
+
+        //회복하기
+        public void Cure(float healthToAdd)
+        {
+            //죽음 체크
+            if (IsDeath)
+                return;
+
+            _currentHealthSO.RestoreHealth(healthToAdd);
+
+            //회복처리 (VFX, SFX, 애니메이션, UI)
+            if(_healEventSO != null)
+                _healEventSO.RaiseEvent();
+        }
+
+        //
         #endregion
     }
 }

@@ -390,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018756398}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.037421167, y: -0.000000033296676, z: 0.0000000012468737, w: 0.99929965}
+  m_LocalRotation: {x: 0.03742117, y: 0.000000029781452, z: -0.0000000011152379, w: 0.9992996}
   m_LocalPosition: {x: 135, y: 1.8, z: 46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -771,7 +771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603458914}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03742117, y: -0.000000033296683, z: 0.000000001246874, w: 0.9992996}
+  m_LocalRotation: {x: 0.03742117, y: 0.000000029781454, z: -0.0000000011152379, w: 0.9992996}
   m_LocalPosition: {x: 135, y: 1.8, z: 46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14396,6 +14396,8 @@ MonoBehaviour:
   minTurnSpeed: 400
   maxTurnSpeed: 1200
   idleTimeout: 3
+  _damageEventSO: {fileID: 11400000, guid: 31534793e45d0f14cacfede9dec94c3b, type: 2}
+  _deathEventSO: {fileID: 11400000, guid: 4bab156d907841b4f9e4c5484c096a5d, type: 2}
 --- !u!114 &5136192684675180623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14409,8 +14411,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::My3DGame.Damageable
   _healthCongfigSO: {fileID: 11400000, guid: 99b9f4acbecebda4ea067e76ec45b51e, type: 2}
-  _currentHealthSO: {fileID: 0}
+  _currentHealthSO: {fileID: 11400000, guid: ec194ba9a0cfb2045a006a0cebd0d349, type: 2}
   _invulnerableTimer: 0.2
+  _damageEventSO: {fileID: 11400000, guid: 31534793e45d0f14cacfede9dec94c3b, type: 2}
+  _deathEventSO: {fileID: 11400000, guid: 4bab156d907841b4f9e4c5484c096a5d, type: 2}
+  _healEventSO: {fileID: 11400000, guid: 20fd643be6f6bd14696dbda17ff624b7, type: 2}
+  _restoreHealthEventSO: {fileID: 11400000, guid: 56d385aa067aa4849a32d64f93f27ec9, type: 2}
 --- !u!4 &5163306488451479910
 Transform:
   m_ObjectHideFlags: 0

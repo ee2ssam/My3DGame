@@ -56,6 +56,11 @@ namespace My3DGame
         //Damage
         protected Damageable m_Damageable;
 
+        //이벤트 채널
+        [Header("Listening To Channels")]
+        [SerializeField] private DamagedEventChannelSO _damageEventSO;
+        [SerializeField] private VoidEventChannelSO _deathEventSO;
+
         // Parameters
         //readonly int m_Hash = Animator.StringToHash("");
         readonly int m_HashInputDetected = Animator.StringToHash("InputDetected");
@@ -64,6 +69,8 @@ namespace My3DGame
         readonly int m_HashTimeoutToIdle = Animator.StringToHash("TimeoutToIdle");
         readonly int m_HashVerticalSpeed = Animator.StringToHash("VerticalSpeed");
         readonly int m_HashGrounded = Animator.StringToHash("Grounded");
+        readonly int m_HashHurt = Animator.StringToHash("Hurt");
+        readonly int m_HashDeath = Animator.StringToHash("Death");
 
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
@@ -96,16 +103,26 @@ namespace My3DGame
 
         private void OnEnable()
         {
-            //이벤트 함수 등록
-            m_Damageable.OnDamaged += Damaged;
-            m_Damageable.OnDie += Die;
+            //UnityAction 이벤트 함수 등록
+            //m_Damageable.OnDamaged += Damaged;
+            //m_Damageable.OnDie += Die;
+            //ScriptableObject 이벤트 채널 등록
+            if (_damageEventSO != null)
+                _damageEventSO.OnEventRaised += Damaged;
+            if (_deathEventSO != null)
+                _deathEventSO.OnEventRaised += Die;
         }
 
         private void OnDisable()
         {
-            //이벤트 함수 제거
-            m_Damageable.OnDamaged -= Damaged;
-            m_Damageable.OnDie -= Die;
+            //UnityAction 이벤트 함수 제거
+            //m_Damageable.OnDamaged -= Damaged;
+            //m_Damageable.OnDie -= Die;
+            //ScriptableObject 이벤트 채널 제거
+            if (_damageEventSO != null)
+                _damageEventSO.OnEventRaised -= Damaged;
+            if (_deathEventSO != null)
+                _deathEventSO.OnEventRaised -= Die;
         }
 
         private void FixedUpdate()
@@ -353,12 +370,23 @@ namespace My3DGame
         //데미지 처리
         private void Damaged(float damage, GameObject damageSource)
         {
+            //애니메이션
+            m_Animator.SetTrigger(m_HashHurt);
 
+            //데미지 방향 설정
+            if(damageSource != null)
+            {
+
+            }
+            
         }
 
         //죽음 처리
         private void Die()
         {
+            //애니메이션
+            m_Animator.SetTrigger(m_HashHurt);
+
 
         }
         #endregion
