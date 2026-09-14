@@ -71,6 +71,8 @@ namespace My3DGame
         readonly int m_HashGrounded = Animator.StringToHash("Grounded");
         readonly int m_HashHurt = Animator.StringToHash("Hurt");
         readonly int m_HashDeath = Animator.StringToHash("Death");
+        readonly int m_HashHurtFromX = Animator.StringToHash("HurtFromX");
+        readonly int m_HashHurtFromY = Animator.StringToHash("HurtFromY");
 
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
@@ -376,18 +378,33 @@ namespace My3DGame
             //데미지 방향 설정
             if(damageSource != null)
             {
+                Vector3 dir = damageSource.transform.position - transform.position;
+                dir.y = 0f;
 
+                Vector3 localHurt = transform.InverseTransformDirection(dir);
+                m_Animator.SetFloat(m_HashHurtFromX, localHurt.x);
+                m_Animator.SetFloat(m_HashHurtFromY, localHurt.y);
+            }
+            else
+            {
+                m_Animator.SetFloat(m_HashHurtFromX, 0f);
+                m_Animator.SetFloat(m_HashHurtFromY, 0f);
             }
             
+            //화면 흔들림
+
+            //SFX 효과
         }
 
         //죽음 처리
         private void Die()
         {
             //애니메이션
-            m_Animator.SetTrigger(m_HashHurt);
+            m_Animator.SetTrigger(m_HashDeath);
 
-
+            //초기화
+            m_ForwardSpeed = 0f;
+            m_VerticalSpeed = 0f;
         }
         #endregion
     }
