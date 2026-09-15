@@ -73,6 +73,8 @@ namespace My3DGame
         readonly int m_HashDeath = Animator.StringToHash("Death");
         readonly int m_HashHurtFromX = Animator.StringToHash("HurtFromX");
         readonly int m_HashHurtFromY = Animator.StringToHash("HurtFromY");
+        readonly int m_HashMeleeAttack = Animator.StringToHash("MeleeAttack");
+        readonly int m_HashStateTime = Animator.StringToHash("StateTime");
 
         // States
         readonly int m_HashLocomotion = Animator.StringToHash("Locomotion");
@@ -127,10 +129,18 @@ namespace My3DGame
                 _deathEventSO.OnEventRaised -= Die;
         }
 
+        //1초에 50번 프레임 : 0.02초
         private void FixedUpdate()
         {
             CacheAnimatorState();
             UpdateInputBlocking();
+
+            //Attack-Combo
+            m_Animator.ResetTrigger(m_HashMeleeAttack);
+            m_Animator.SetFloat(m_HashStateTime, Mathf.Repeat(m_CurrentStateInfo.normalizedTime, 1f));
+
+            if (m_Input.Attack)
+                m_Animator.SetTrigger(m_HashMeleeAttack);
 
             CalculateForwardMovement();
             CalculateVerticalMovement();
@@ -348,7 +358,7 @@ namespace My3DGame
 
         void TimeoutToIdle()
         {
-            bool inputDetected = IsMoveInput;
+            bool inputDetected = IsMoveInput || m_Input.Attack;
 
             if(inputDetected == false)
             {

@@ -18,6 +18,7 @@ namespace My3DGame
         public event UnityAction<Vector2> MoveEvent = delegate { };
         public event UnityAction JumpEvent = delegate { };
         public event UnityAction JumpCanceledEvent = delegate { };
+        public event UnityAction AttackEvent = delegate { };
 
         //CM Action 입력시 실행되는 이벤트 함수
         public event UnityAction<Vector2> LookEvent = delegate { };
@@ -98,6 +99,14 @@ namespace My3DGame
             if (context.phase == InputActionPhase.Canceled)
             {
                 JumpCanceledEvent.Invoke();
+            }
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                AttackEvent.Invoke();
             }
         }
         #endregion

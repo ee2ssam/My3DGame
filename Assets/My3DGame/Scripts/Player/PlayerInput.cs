@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace My3DGame
 {
@@ -18,6 +19,13 @@ namespace My3DGame
         //Move
         private Vector2 m_Movement;
         private bool m_Jump;
+
+        //Attack
+        private bool m_Attack;
+
+        private Coroutine m_AttackWaitCoroutine;
+        //최소한 한 프레임동안만 m_Attack true로 해준다
+        private const float k_AttackInputDuration = 0.03f;
 
         //Look
         [SerializeField] private Vector2 m_Look;
@@ -48,6 +56,18 @@ namespace My3DGame
             private set { m_Jump = value; }
         }
 
+        public bool Attack
+        {
+            get
+            {
+                if (playerControllerInputBlocked)
+                    return false;
+
+                return m_Attack;
+            }
+            private set { m_Attack = value; }
+        }
+
         public Vector2 Look
         {
             get
@@ -68,6 +88,8 @@ namespace My3DGame
             inputReader.MoveEvent += OnMove;
             inputReader.JumpEvent += OnJumpStarted;
             inputReader.JumpCanceledEvent += OnJumpCanceled;
+            inputReader.AttackEvent += OnAttack;
+
             inputReader.LookEvent += OnLook;
         }
 
@@ -77,6 +99,8 @@ namespace My3DGame
             inputReader.MoveEvent -= OnMove;
             inputReader.JumpEvent -= OnJumpStarted;
             inputReader.JumpCanceledEvent -= OnJumpCanceled;
+            inputReader.AttackEvent -= OnAttack;
+
             inputReader.LookEvent -= OnLook;
 
         }
@@ -102,6 +126,23 @@ namespace My3DGame
         private void OnJumpCanceled()
         {
             Jump = false;
+        }
+
+        private void OnAttack()
+        {
+            if (m_AttackWaitCoroutine != null)
+                StopCoroutine(m_AttackWaitCoroutine);   //지정된 코루틴 강제 종료
+            //StopAllCoroutines();                      //모든 코루틴 강제 종료
+
+            m_AttackWaitCoroutine = StartCoroutine(AttackWait());
+        }
+
+        IEnumerator AttackWait()
+        {
+            Attack = true;
+            yield return new WaitForSeconds(k_AttackInputDuration);
+
+            Attack = false;
         }
 
         private void OnLook(Vector2 look)
