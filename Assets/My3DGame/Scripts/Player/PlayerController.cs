@@ -358,7 +358,7 @@ namespace My3DGame
 
         void TimeoutToIdle()
         {
-            bool inputDetected = IsMoveInput || m_Input.Attack;
+            bool inputDetected = IsMoveInput;
 
             if(inputDetected == false)
             {
@@ -415,6 +415,18 @@ namespace My3DGame
             //초기화
             m_ForwardSpeed = 0f;
             m_VerticalSpeed = 0f;
+        }
+
+        //공격 시작
+        public void MeleeAttackStart(int value = 0)
+        {
+            Debug.Log("MeleeAttackStart");
+        }
+
+        //공격 끝
+        public void MeleeAttackEnd()
+        {
+            Debug.Log("MeleeAttackEnd");
         }
         #endregion
     }
