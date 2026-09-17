@@ -272,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 147520012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134.69604, y: 1.05451, z: 60.3}
+  m_LocalPosition: {x: 134.69604, y: 0.8, z: 60.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6156,7 +6156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732333947184288153}
   - component: {fileID: 9185625976880180555}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Top_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7493,7 +7493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6385510241691792627}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_JointEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8288,7 +8288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6052330597547719450}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8709,7 +8709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8168807862876058318}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14325,7 +14325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3958215764333391238}
   - component: {fileID: 4030800723055825253}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14523,6 +14523,7 @@ MonoBehaviour:
   minTurnSpeed: 400
   maxTurnSpeed: 1200
   idleTimeout: 3
+  meleeWeapon: {fileID: 6602223682374189712}
   _damageEventSO: {fileID: 11400000, guid: 31534793e45d0f14cacfede9dec94c3b, type: 2}
   _deathEventSO: {fileID: 11400000, guid: 4bab156d907841b4f9e4c5484c096a5d, type: 2}
 --- !u!114 &5136192684675180623
@@ -14782,7 +14783,7 @@ GameObject:
   - component: {fileID: 813200502789272609}
   - component: {fileID: 511180771817135310}
   - component: {fileID: 387263180337187846}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15036,7 +15037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3362659553719036497}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15052,7 +15053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238656741539244597}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Bottom_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15167,7 +15168,8 @@ GameObject:
   - component: {fileID: 6602223682374189710}
   - component: {fileID: 1679195158532116045}
   - component: {fileID: 6602223682374189711}
-  m_Layer: 9
+  - component: {fileID: 6602223682374189712}
+  m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15510,6 +15512,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FixedUpdateFollow
   toFollow: {fileID: 3655736363826001329}
+--- !u!114 &6602223682374189712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6299958009845759265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942a0a706a1780e4db4e33cf1839066d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.MeleeWeapon
+  attackPoints:
+  - radius: 0.15
+    attackRoot: {fileID: 6385510241691792627}
+    offset: {x: 0.15, y: 0, z: 0}
+  - radius: 0.15
+    attackRoot: {fileID: 6385510241691792627}
+    offset: {x: 0.45, y: 0, z: 0}
+  - radius: 0.15
+    attackRoot: {fileID: 6385510241691792627}
+    offset: {x: 0.75, y: 0, z: 0}
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_PreviousPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!4 &6642662359518557215
 Transform:
   m_ObjectHideFlags: 0
@@ -15566,7 +15597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242536900008511944}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15582,7 +15613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3843899683171010599}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Stone_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15994,7 +16025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152882223270745045}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_RightHand_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16462,7 +16493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313258241720129414}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_Joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17562,7 +17593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6239096427021932017}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Staff_LeftHand_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

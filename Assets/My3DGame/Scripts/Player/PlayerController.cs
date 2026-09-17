@@ -421,12 +421,14 @@ namespace My3DGame
         public void MeleeAttackStart(int value = 0)
         {
             Debug.Log("MeleeAttackStart");
+            //m_InAttack = true;
         }
 
         //공격 끝
         public void MeleeAttackEnd()
         {
             Debug.Log("MeleeAttackEnd");
+            //m_InAttack = false;
         }
         #endregion
     }
