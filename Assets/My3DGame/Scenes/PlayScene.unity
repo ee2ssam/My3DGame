@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 147520015}
   - component: {fileID: 147520014}
   - component: {fileID: 147520013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 1190660474644834720, guid: eefcca8b2f1b4b942bb1800b114351b3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5787639411277061894, guid: eefcca8b2f1b4b942bb1800b114351b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1090,7 +1094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915504155594444031}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_MiddleProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 451429452546863472}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_UpperMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3538716564347577246}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_LowerMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451935869235879306}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: HeadTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,7 +1235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8614817836170228354}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_LowerMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1373,7 +1377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7562124382045340322}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6156,7 +6160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732333947184288153}
   - component: {fileID: 9185625976880180555}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Top_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6221,7 +6225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 800965717663639153}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6237,7 +6241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6437328051126097984}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6291,7 +6295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5899445818635907314}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_IndexEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6307,7 +6311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4321704561159158733}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6323,7 +6327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6487573029176937314}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_TongueDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6390,7 +6394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1973090059922105557}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: ---------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6407,7 +6411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3835420716635991665}
   - component: {fileID: 8476067588586809992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SwingSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6458,7 +6462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8015626127009610247}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_HairFrontalRightEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6521,7 +6525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6044348582028403717}
   - component: {fileID: 6489843919633432836}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6684,7 +6688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2889503723189960727}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Cheek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6717,7 +6721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8779216133889972152}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_MiddleDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6749,7 +6753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8436474922964547530}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_RingDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6795,7 +6799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8715317376323102159}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_PinkyProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6842,7 +6846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6410895324175262764}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_PinkyIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6858,7 +6862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2423287168233104438}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_IndexEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6912,7 +6916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3907009487665396204}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6943,7 +6947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1056015406966711937}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_EyebrowProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6989,7 +6993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7232718299840814965}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7005,7 +7009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1015809780366366297}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Toes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7056,7 +7060,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6387132686755016657}
   - component: {fileID: 9084281107655543149}
-  m_Layer: 9
+  - component: {fileID: 9084281107655543150}
+  m_Layer: 7
   m_Name: Ellen_Staff_Swish02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7072,7 +7077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4206805441332940200}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_RingDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7088,7 +7093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2206052899809432782}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7104,7 +7109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6559568909793774184}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_PinkyDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7217,7 +7222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2372227505726216626}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Nostril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7264,7 +7269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4745425248699330710}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_ToeEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7282,7 +7287,7 @@ GameObject:
   - component: {fileID: 1762163660398370328}
   - component: {fileID: 7066206529245261992}
   - component: {fileID: 2884408756225231986}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: StaffSwish03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7331,7 +7336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 286745557310536428}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_RingProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7362,7 +7367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7299995761024612663}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7399,7 +7404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6804022524880344835}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7446,7 +7451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1700313726054073049}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_UpperMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7493,7 +7498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6385510241691792627}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_JointEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7600,7 +7605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4544603253891135313}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_LowerEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7616,7 +7621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4245499689534332979}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7648,7 +7653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7635872821250366961}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7664,7 +7669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3865506725853380471}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_UpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7696,7 +7701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3451866598149838830}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_SideEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7822,7 +7827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1971595725006320351}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_ThumbProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7838,7 +7843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8963623558165532321}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_ThumbDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7854,7 +7859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507495567078805364}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_MiddleDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7870,7 +7875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7849376698007176697}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_RingIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7886,7 +7891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3185373342163886028}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_LowerEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7902,7 +7907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8822851980266244862}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Nostril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7920,7 +7925,7 @@ GameObject:
   - component: {fileID: 8951133611415490690}
   - component: {fileID: 3488435073741777376}
   - component: {fileID: 634336151790971466}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7936,7 +7941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854306542756502008}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_UpperMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8145,7 +8150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3218726003142506187}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_EyebrowProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8193,7 +8198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2346553077760331484}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_PinkyIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8209,7 +8214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010675789479100684}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_PinkyEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8241,7 +8246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3536352477087710144}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8288,7 +8293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6052330597547719450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8471,7 +8476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5702721063773665852}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_PinkyEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8487,7 +8492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5369929009127899541}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_ThumbProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8518,7 +8523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4079565883468259471}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8534,7 +8539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1324954049981366483}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: PistolRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8663,7 +8668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 423484147514664940}
   - component: {fileID: 3574942880487102617}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: HurtSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8709,7 +8714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8168807862876058318}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8760,7 +8765,7 @@ GameObject:
   - component: {fileID: 6399132256607042553}
   - component: {fileID: 7036543227076825610}
   - component: {fileID: 8810414912247413580}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: StaffSwish01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8873,7 +8878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5884037784705852983}
   - component: {fileID: 8631775314843686512}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: EmoteLanding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8970,7 +8975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7391905752480010201}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_EyebrowDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8986,7 +8991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3143839793682581616}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9003,7 +9008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1467075221245144649}
   - component: {fileID: 1129454618959331239}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9116,7 +9121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4642463583433875381}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftHandIKPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9132,7 +9137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7778464627581271131}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_EyebrowIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9196,7 +9201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2665424909805383857}
   - component: {fileID: 3785220783249944290}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: EmoteJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9274,7 +9279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2889708289285157730}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_MiddleEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9290,7 +9295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2224351294635811355}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_FrontalLeftEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9338,7 +9343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7338877041008276468}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_SideProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9354,7 +9359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2383031656536121237}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_JawEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9370,7 +9375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9179850918493350597}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: StrafeCamPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9401,7 +9406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2637989421004317459}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9447,7 +9452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5163306488451479910}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9479,7 +9484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3526528121894694640}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_SideDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9526,7 +9531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3590203761118965413}
   - component: {fileID: 3150379569155016291}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: LandingSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9542,7 +9547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2264729909178130437}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9573,7 +9578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626037220912754146}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_LowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14325,7 +14330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3958215764333391238}
   - component: {fileID: 4030800723055825253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14341,7 +14346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4455087619853866347}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_LowerMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14357,7 +14362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2736951503774411683}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_IndexDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14373,7 +14378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7084292322459200887}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14391,7 +14396,7 @@ GameObject:
   - component: {fileID: 7879967349739699360}
   - component: {fileID: 1807673744867046344}
   - component: {fileID: 3193474513080317670}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: StaffSwish04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14412,7 +14417,7 @@ GameObject:
   - component: {fileID: 5136192684675180622}
   - component: {fileID: 5136192684675180621}
   - component: {fileID: 5136192684675180623}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14523,7 +14528,7 @@ MonoBehaviour:
   minTurnSpeed: 400
   maxTurnSpeed: 1200
   idleTimeout: 3
-  meleeWeapon: {fileID: 6602223682374189712}
+  m_Weapon: {fileID: 6602223682374189712}
   _damageEventSO: {fileID: 11400000, guid: 31534793e45d0f14cacfede9dec94c3b, type: 2}
   _deathEventSO: {fileID: 11400000, guid: 4bab156d907841b4f9e4c5484c096a5d, type: 2}
 --- !u!114 &5136192684675180623
@@ -14570,7 +14575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6761914441372182811}
   - component: {fileID: 9205301735477190008}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: EmoteAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14606,7 +14611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7869224841398475247}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: ---------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14623,7 +14628,8 @@ GameObject:
   m_Component:
   - component: {fileID: 440358369412287471}
   - component: {fileID: 8577201864937659041}
-  m_Layer: 9
+  - component: {fileID: 8577201864937659042}
+  m_Layer: 7
   m_Name: Ellen_Staff_Swish03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14639,7 +14645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6281413658392760414}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_TongueProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14686,7 +14692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7241241846356724887}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14702,7 +14708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8718310690424264385}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Cheek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14734,7 +14740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2047925920685530938}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_IndexIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14750,7 +14756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132438768660517644}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_RingEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14783,7 +14789,7 @@ GameObject:
   - component: {fileID: 813200502789272609}
   - component: {fileID: 511180771817135310}
   - component: {fileID: 387263180337187846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14799,7 +14805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4524389278016305495}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: StrafeCamTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14876,7 +14882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52133949710733823}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_MiddleIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14972,7 +14978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4056434071456709202}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_LowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15021,7 +15027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8284197055307238979}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_RingIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15037,7 +15043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3362659553719036497}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15053,7 +15059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238656741539244597}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Bottom_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15070,7 +15076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4703538662150571757}
   - component: {fileID: 8556660991279370110}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15086,7 +15092,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6736943479994414215}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15103,7 +15109,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4331158816428462584}
   - component: {fileID: 6790885553414471428}
-  m_Layer: 9
+  - component: {fileID: 6790885553414471429}
+  m_Layer: 7
   m_Name: Ellen_Staff_Swish04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15134,7 +15141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3210586121130771815}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_FrontalBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15169,7 +15176,7 @@ GameObject:
   - component: {fileID: 1679195158532116045}
   - component: {fileID: 6602223682374189711}
   - component: {fileID: 6602223682374189712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15185,7 +15192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8422300686989098639}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Toes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15296,7 +15303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7129071288369429246}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_ThumbIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15312,7 +15319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2753595730546106414}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_IndexProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15441,7 +15448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6345756243045168328}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_IndexProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15457,7 +15464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9077191118661303054}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_UpperEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15536,11 +15543,8 @@ MonoBehaviour:
     offset: {x: 0.75, y: 0, z: 0}
   targetLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_PreviousPos:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+    m_Bits: 256
+  m_AttackDamage: 10
 --- !u!4 &6642662359518557215
 Transform:
   m_ObjectHideFlags: 0
@@ -15565,7 +15569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5405412586451554882}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_RingEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15581,7 +15585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8930743712828977644}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_PinkyProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15597,7 +15601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242536900008511944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15613,7 +15617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3843899683171010599}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Stone_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15660,7 +15664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7069658302755203947}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_TongueEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15684,6 +15688,19 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &6790885553414471429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6197418722981424462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64c680d4c1968d4e9fb03ff84e05183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.TimeEffect
+  staffLight: {fileID: 4088107136294036651}
 --- !u!33 &6794181069887312941
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15717,7 +15734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3766183026102031373}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_ToeEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15733,7 +15750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4282740649163546231}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_ThumbDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15749,7 +15766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5755310674657513008}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Hand_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15765,7 +15782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795350351306769277}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_RingProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15812,7 +15829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7091139248501414752}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15828,7 +15845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 725084859954615344}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: AudioSources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15891,7 +15908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4623868466665986771}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15976,7 +15993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4301518163662363948}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_ThumbEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16009,7 +16026,7 @@ GameObject:
   - component: {fileID: 1532823414591882877}
   - component: {fileID: 6794181069887312941}
   - component: {fileID: 5022024940478186611}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: StaffSwish02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16025,7 +16042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152882223270745045}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_RightHand_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16041,7 +16058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801299064101313885}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_HeadEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16073,7 +16090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2582583880309966005}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16089,7 +16106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 349603144986012674}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_EyebrowIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16148,13 +16165,13 @@ GameObject:
   - component: {fileID: 934943779953117432}
   - component: {fileID: 4088107136294036651}
   - component: {fileID: 7696229167744132869}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: TrailEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7696229167744132869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16193,7 +16210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4233059675507374851}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_UpperEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16285,7 +16302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2791918528716183494}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_MiddleIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16301,7 +16318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3186482974523700081}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_UpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16332,7 +16349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2808792245085790315}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightHandIKPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16365,7 +16382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4169702354944701809}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_ThumbIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16381,7 +16398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8705460216258152869}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_ThumbEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16429,7 +16446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5298496433645581166}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_UpperChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16445,7 +16462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3655736363826001329}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_Hand_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16493,7 +16510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313258241720129414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_Joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16606,7 +16623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8894289696137088241}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_IndexDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16623,7 +16640,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8570183356360106286}
   - component: {fileID: 2043401711582330728}
-  m_Layer: 9
+  - component: {fileID: 8570183356360106287}
+  m_Layer: 7
   m_Name: Ellen_Staff_Swish01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16791,6 +16809,19 @@ Transform:
   - {fileID: 6399132256607042553}
   m_Father: {fileID: 934943779953117432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8570183356360106287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8552013642499522454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64c680d4c1968d4e9fb03ff84e05183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.TimeEffect
+  staffLight: {fileID: 4088107136294036651}
 --- !u!111 &8577201864937659041
 Animation:
   m_ObjectHideFlags: 0
@@ -16808,6 +16839,19 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &8577201864937659042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332330321433708647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64c680d4c1968d4e9fb03ff84e05183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.TimeEffect
+  staffLight: {fileID: 4088107136294036651}
 --- !u!1 &8609025514366631556
 GameObject:
   m_ObjectHideFlags: 0
@@ -16817,7 +16861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2425090812890699418}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_PinkyDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16833,7 +16877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8275049482848939470}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_HairFrontalRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16976,7 +17020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390009934410080433}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_MiddleEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17023,7 +17067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3397186935878236020}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_IndexIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17040,7 +17084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8989349682388887712}
   - component: {fileID: 1946627018234584509}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: EmoteDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17056,7 +17100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543550682411610840}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_FrontalLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17088,7 +17132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5614343378704310159}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Hair_SideIntermediate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17199,7 +17243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363199562041402214}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Left_EyebrowDistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17302,6 +17346,19 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &9084281107655543150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844224733171535727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64c680d4c1968d4e9fb03ff84e05183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.TimeEffect
+  staffLight: {fileID: 4088107136294036651}
 --- !u!4 &9179850918493350597
 Transform:
   m_ObjectHideFlags: 0
@@ -17446,7 +17503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6642662359518557215}
   - component: {fileID: 4112126373529842226}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: FootstepSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17464,7 +17521,7 @@ GameObject:
   - component: {fileID: 8875860452677742392}
   - component: {fileID: 4760311759383923200}
   - component: {fileID: 5978261252908531924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RepawnParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17480,7 +17537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 726225164091351573}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Ellen_Right_MiddleProximal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17593,7 +17650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6239096427021932017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Staff_LeftHand_Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -56,6 +56,9 @@ namespace My3DGame
         //Damage
         protected Damageable m_Damageable;
 
+        //공격
+        [SerializeField] protected MeleeWeapon m_Weapon;
+
         //이벤트 채널
         [Header("Listening To Channels")]
         [SerializeField] private DamagedEventChannelSO _damageEventSO;
@@ -103,6 +106,12 @@ namespace My3DGame
             m_Damageable = GetComponent<Damageable>();
 
             m_MainCamera = Camera.main;
+        }
+
+        private void Start()
+        {
+            //초기화
+            m_Weapon.SetOwner(this.gameObject);
         }
 
         private void OnEnable()
@@ -418,17 +427,17 @@ namespace My3DGame
         }
 
         //공격 시작
-        public void MeleeAttackStart(int value = 0)
+        public void MeleeAttackStart(int throwingAttack = 0)
         {
-            Debug.Log("MeleeAttackStart");
-            //m_InAttack = true;
+            //Debug.Log("MeleeAttackStart : m_InAttack = true");
+            m_Weapon.StartAttack(throwingAttack != 0);
         }
 
         //공격 끝
         public void MeleeAttackEnd()
         {
-            Debug.Log("MeleeAttackEnd");
-            //m_InAttack = false;
+            //Debug.Log("MeleeAttackEnd : m_InAttack = false");
+            m_Weapon.EndAttack();
         }
         #endregion
     }
