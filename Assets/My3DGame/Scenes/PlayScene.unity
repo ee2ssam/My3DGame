@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 147520013}
   m_Layer: 8
   m_Name: EnemyCube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15545,6 +15545,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_AttackDamage: 10
+  timeEffects:
+  - {fileID: 8570183356360106287}
+  - {fileID: 9084281107655543150}
+  - {fileID: 8577201864937659042}
+  - {fileID: 6790885553414471429}
+  hitParticlePrefab: {fileID: 198200190501009950, guid: 400e06051701a8c4998087ae421728e3, type: 3}
 --- !u!4 &6642662359518557215
 Transform:
   m_ObjectHideFlags: 0

@@ -37,10 +37,35 @@ namespace My3DGame
         protected static Collider[] s_ColliderCache = new Collider[32];
         protected GameObject m_Owner;           //무기 주인
         [SerializeField] protected float m_AttackDamage = 10; //공격 데미지
+
+        //콤보 공격 이펙트
+        public TimeEffect[] timeEffects;
+
+        //타격 이펙트
+        public ParticleSystem hitParticlePrefab;
+
+        //타격 이펙트 사전 로딩 10개 - 오브젝트 풀
+        private const int ParticleCount = 10;
+        protected ParticleSystem[] m_ParticlePool = new ParticleSystem[ParticleCount];
+        protected int m_CurrentParticle = 0;    //현재 플레이하는 파티클 인덱스
         #endregion
 
 
         #region Unity Event Method
+        private void Awake()
+        {
+            //타격 이펙트 사전 로딩
+            if(hitParticlePrefab != null)
+            {
+                for(int i = 0; i < m_ParticlePool.Length; i++)
+                {
+                    m_ParticlePool[i] = Instantiate(hitParticlePrefab);
+                    //로딩 후 파티클 정지
+                    m_ParticlePool[i].Stop();
+                }
+            }
+        }
+
         private void FixedUpdate()
         {
             //충돌 체크 - 공격 중
@@ -114,10 +139,20 @@ namespace My3DGame
                 return;
 
             //레이어 마스크(bit 연산) 체크
-            //if((targetLayers.value & (1 << other.gameObject.layer)) == 0)
-            //    return;
+            if((targetLayers.value & (1 << other.gameObject.layer)) == 0)
+                return;
 
             d.TakeDamage(m_AttackDamage, this.gameObject);
+
+            //타격 이펙트 플레이
+            if(hitParticlePrefab != null)
+            {
+                m_ParticlePool[m_CurrentParticle].transform.position = apt.attackRoot.transform.position;
+                m_ParticlePool[m_CurrentParticle].time = 0;
+                m_ParticlePool[m_CurrentParticle].Play();
+                //인덱스 카운트
+                m_CurrentParticle = (m_CurrentParticle + 1) % ParticleCount;
+            }
         }
 
 

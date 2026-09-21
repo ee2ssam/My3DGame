@@ -190,7 +190,8 @@ AnimatorState:
   - {fileID: -4458333432869952167}
   - {fileID: 6177751942852278849}
   - {fileID: 1523326210722997257}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -948160144681212108}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -763,7 +764,8 @@ AnimatorState:
   - {fileID: -7279176376788155993}
   - {fileID: -5688420517642606400}
   - {fileID: -4121867804664189675}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 4788959344784298397}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -875,7 +877,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: 3326683682661877345}
   - {fileID: 5720564285079819951}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 8061341809277713199}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1114,6 +1117,19 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 1
+--- !u!114 &-948160144681212108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328af0c934475e84382ca074c12fd0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.EllenStaffEffectSMB
+  effectIndex: 1
 --- !u!1101 &-638108270808480361
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2497,6 +2513,19 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &4788959344784298397
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328af0c934475e84382ca074c12fd0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.EllenStaffEffectSMB
+  effectIndex: 2
 --- !u!1101 &5195218051561530033
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2743,7 +2772,8 @@ AnimatorState:
   - {fileID: -638108270808480361}
   - {fileID: -8979002017654975136}
   - {fileID: 5195218051561530033}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 8100311471935210264}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2800,6 +2830,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &8061341809277713199
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328af0c934475e84382ca074c12fd0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.EllenStaffEffectSMB
+  effectIndex: 3
+--- !u!114 &8100311471935210264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328af0c934475e84382ca074c12fd0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  effectIndex: 0
 --- !u!206 &8123514461693897308
 BlendTree:
   m_ObjectHideFlags: 1

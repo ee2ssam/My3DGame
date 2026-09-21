@@ -57,7 +57,7 @@ namespace My3DGame
         protected Damageable m_Damageable;
 
         //공격
-        [SerializeField] protected MeleeWeapon m_Weapon;
+        public MeleeWeapon m_Weapon;
 
         //이벤트 채널
         [Header("Listening To Channels")]
@@ -412,7 +412,8 @@ namespace My3DGame
             
             //화면 흔들림
 
-            //SFX 효과
+            //SFX 효과 - 랜덤하게 데미지 효과음 플레이
+
         }
 
         //죽음 처리

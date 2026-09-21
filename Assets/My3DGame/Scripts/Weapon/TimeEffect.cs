@@ -40,12 +40,12 @@ namespace My3DGame
         //무기 이펙트 효과 초기화
         IEnumerator DisableAtEndOfAnimation()
         {
+            //애니메이션 플레이 타임까지 지연
             yield return new WaitForSeconds(m_Animation.clip.length);
 
+            //초기화
             this.gameObject.SetActive(false);
             staffLight.enabled = false;
         }
-
-
     }
 }
