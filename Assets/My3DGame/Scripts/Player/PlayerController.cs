@@ -409,11 +409,11 @@ namespace My3DGame
                 m_Animator.SetFloat(m_HashHurtFromX, 0f);
                 m_Animator.SetFloat(m_HashHurtFromY, 0f);
             }
-            
+
             //화면 흔들림
 
             //SFX 효과 - 랜덤하게 데미지 효과음 플레이
-
+            //PlayRandomClip();
         }
 
         //죽음 처리
