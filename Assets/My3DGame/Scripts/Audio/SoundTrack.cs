@@ -5,11 +5,12 @@ namespace My3DGame
 {
     /// <summary>
     /// 배경음 플레이어, 스택 구조를 이용하여 배경음 플레이 리스트를 만든다
+    /// 배경음 페이드 효과 구현
     /// </summary>
     public class SoundTrack : MonoBehaviour
     {
         #region Variables
-        public AudioSource[] audioSources;
+        public AudioSource[] audioSources;      //배경음 목록
 
         public float soundTrackVolume = 1f;
         public float initialVolume = 1f;
