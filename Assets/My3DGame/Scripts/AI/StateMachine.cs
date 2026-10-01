@@ -63,10 +63,9 @@ namespace My3DGame
         //상태 변경
         // A -> B
         // A 나가기, B -> Current, B 들어가기
-        public State ChangeState(State newState)
+        public State ChangeState(System.Type newType)
         {
-            //현재 상태 체크
-            var newType = newState.GetType();
+            //현재 상태 체크            
             if(m_CurrentState != null && newType == m_CurrentState.GetType())
             {
                 //현재 상태와 새로운 상태가 동일
@@ -81,7 +80,7 @@ namespace My3DGame
 
             //m_CurrentState를 새로운 상태로 변경
             m_PreviousState = m_CurrentState;
-            m_CurrentState = newState;
+            m_CurrentState = states[newType];
 
             //newState(현재 상태)로 들어가기
             m_CurrentState.OnEnter();
