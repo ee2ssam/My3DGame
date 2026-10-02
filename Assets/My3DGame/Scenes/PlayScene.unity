@@ -10160,6 +10160,7 @@ GameObject:
   - component: {fileID: 6772175514041007747}
   - component: {fileID: 6772175514041007749}
   - component: {fileID: 6772175514041007748}
+  - component: {fileID: 6772175514041007750}
   m_Layer: 8
   m_Name: Paladin
   m_TagString: Enemy
@@ -19296,6 +19297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20abe4e4621f264ebd20dd065598e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::My3DGame.Enemy
+  meleeWeapon: {fileID: 0}
+  attackRange: 2
+  attackDelay: 2
+  rotateSpeed: 10
 --- !u!114 &6772175514041007749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19310,6 +19315,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::My3DGame.EnemyDamageable
   _healthCongfigSO: {fileID: 11400000, guid: ceaca7188b68aa442bd5aad43eb75fbf, type: 2}
   _invulnerableTimer: 0.5
+--- !u!114 &6772175514041007750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553265856630035777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac73e2e7ffa1ff4581b2e71082274fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.DetectionModule
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  detectionRange: 7.5
+  detectionDelay: 0.1
 --- !u!111 &6790885553414471428
 Animation:
   m_ObjectHideFlags: 0

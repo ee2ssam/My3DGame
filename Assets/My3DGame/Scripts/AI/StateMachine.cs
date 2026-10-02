@@ -86,6 +86,8 @@ namespace My3DGame
             m_CurrentState.OnEnter();
             m_ElapseTime = 0f;
 
+            Debug.Log($"{newType}상태로 변경");
+
             return m_CurrentState;
         }
     }
