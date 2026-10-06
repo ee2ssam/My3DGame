@@ -5,7 +5,7 @@ namespace My3DGame
     /// <summary>
     /// 대기 상태를 관리하는 클래스, State를 상속 받는다
     /// 적 디텍션 되면 걷기(추격) 상태 변경 
-    /// -> 공격 범위에 들어오면 공격 상태 변경
+    /// 공격 범위에 들어오면 공격 상태 변경, 대기 상태에서 공격 딜레이 체크
     /// </summary>
     public class IdleState : State
     {

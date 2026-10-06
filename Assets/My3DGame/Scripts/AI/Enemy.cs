@@ -11,6 +11,7 @@ namespace My3DGame
     {
         #region Variables
         //참조
+        protected EnemyDamageable m_Damageable;
         protected DetectionModule m_DetectionModule;
         public MeleeWeapon meleeWeapon;
 
@@ -56,7 +57,24 @@ namespace My3DGame
         protected virtual void Awake()
         {
             //참조
+            m_Damageable = GetComponent<EnemyDamageable>();
             m_DetectionModule = GetComponent<DetectionModule>();
+        }
+
+        private void OnEnable()
+        {
+            //Damageable 이벤트 함수 등록
+            m_Damageable.OnDamaged += OnDamaged;
+            m_Damageable.OnDie += OnDie;
+            //m_Damageable.OnHeal += OnHeal;
+        }
+
+        private void OnDisable()
+        {
+            //Damageable 이벤트 함수 등록
+            m_Damageable.OnDamaged += OnDamaged;
+            m_Damageable.OnDie += OnDie;
+            //m_Damageable.OnHeal += OnHeal;
         }
 
         protected virtual void Start()
@@ -83,6 +101,24 @@ namespace My3DGame
         public State ChangeState(System.Type newType)
         {
             return m_StateMachine.ChangeState(newType);
+        }
+
+        public void SetAttackDelay(float delay)
+        {
+            attackDelay = delay;
+        }
+
+        private void OnDamaged(float damage, GameObject damageSource)
+        {
+
+        }
+
+        private void OnDie()
+        {
+            //상태 변경
+            ChangeState(typeof(DeathState));
+
+            //죽음 설정
         }
         #endregion
 

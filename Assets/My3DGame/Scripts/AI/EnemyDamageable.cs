@@ -43,7 +43,7 @@ namespace My3DGame
             IsDeath = true;
 
             //데미지 처리 (VFX, SFX, 애니메이션)
-            OnDie?.Invoke();                //UnityAction 이벤트 함수
+            OnDie?.Invoke();    //UnityAction 이벤트 함수
         }
 
         public override void Cure(float healthToAdd)
