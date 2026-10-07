@@ -433,14 +433,14 @@ namespace My3DGame
             m_VerticalSpeed = 0f;
         }
 
-        //공격 시작
+        //공격 시작 - 애니메이션 이벤트 호출
         public void MeleeAttackStart(int throwingAttack = 0)
         {
             //Debug.Log("MeleeAttackStart : m_InAttack = true");
             m_Weapon.StartAttack(throwingAttack != 0);
         }
 
-        //공격 끝
+        //공격 끝 - 애니메이션 이벤트 호출
         public void MeleeAttackEnd()
         {
             //Debug.Log("MeleeAttackEnd : m_InAttack = false");

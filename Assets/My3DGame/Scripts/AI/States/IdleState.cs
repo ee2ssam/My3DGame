@@ -43,6 +43,9 @@ namespace My3DGame
                     {
                         stateMachine.ChangeState(typeof(AttackState));
                     }
+
+                    //공격대상을 바라본다
+                    enemy.FaceToTarget();
                 }
                 else
                 {

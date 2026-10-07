@@ -13,6 +13,8 @@ namespace My3DGame
         //참조
         protected EnemyDamageable m_Damageable;
         protected DetectionModule m_DetectionModule;
+        protected Animator m_Animator;
+
         public MeleeWeapon meleeWeapon;
 
         protected StateMachine m_StateMachine;  //상태를 관리하는 상태머신
@@ -23,6 +25,9 @@ namespace My3DGame
 
         //회전
         [SerializeField] protected float rotateSpeed = 10f; //타겟을 향해 회전속도
+
+        //애니메이션 파라미터
+        readonly int m_HashHurt = Animator.StringToHash("Hurt");
         #endregion
 
         #region Property
@@ -59,6 +64,7 @@ namespace My3DGame
             //참조
             m_Damageable = GetComponent<EnemyDamageable>();
             m_DetectionModule = GetComponent<DetectionModule>();
+            m_Animator = GetComponent<Animator>();
         }
 
         private void OnEnable()
@@ -110,7 +116,14 @@ namespace My3DGame
 
         private void OnDamaged(float damage, GameObject damageSource)
         {
+            //애니메이션 변경
+            m_Animator.SetTrigger(m_HashHurt);
 
+            //넉백 : 뒤로 밀어낸다
+
+
+            //상태 변경
+            ChangeState(typeof(IdleState));
         }
 
         private void OnDie()
@@ -119,6 +132,34 @@ namespace My3DGame
             ChangeState(typeof(DeathState));
 
             //죽음 설정
+        }
+
+        //타겟을 바라본다 - 공격시
+        public void FaceToTarget()
+        {
+            //타겟 체크
+            if (Target == null)
+                return;
+
+            //방향을 구하고 그 방향으로 회전
+            Vector3 dir = (Target.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(dir.x, 0f, dir.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation,
+                        Time.deltaTime * rotateSpeed);
+        }
+
+        //공격 시작 - 애니메이션 이벤트 호출
+        public void MeleeAttackStart(int throwingAttack = 0)
+        {
+            Debug.Log("Enemy MeleeAttackStart : m_InAttack = true");
+            meleeWeapon.StartAttack(throwingAttack != 0);
+        }
+
+        //공격 끝 - 애니메이션 이벤트 호출
+        public void MeleeAttackEnd()
+        {
+            Debug.Log("Enemy MeleeAttackEnd : m_InAttack = false");
+            meleeWeapon.EndAttack();
         }
         #endregion
 

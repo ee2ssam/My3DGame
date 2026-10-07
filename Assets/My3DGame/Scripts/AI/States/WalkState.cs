@@ -32,7 +32,7 @@ namespace My3DGame
             //초기화
             if(enemy.Target)
             {
-                m_Agent.stoppingDistance = 1.5f;
+                m_Agent.stoppingDistance = 2f;
                 m_Agent.SetDestination(enemy.Target.position);
             }
         }
