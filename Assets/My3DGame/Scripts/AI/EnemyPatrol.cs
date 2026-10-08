@@ -9,6 +9,8 @@ namespace My3DGame
     public class EnemyPatrol : Enemy
     {
         #region Variables
+        //웨이포인트 목록
+        public Transform[] waypoints;
         #endregion
 
         #region Unity Event Method

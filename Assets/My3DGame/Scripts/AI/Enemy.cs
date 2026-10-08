@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace My3DGame
 {
@@ -14,6 +15,7 @@ namespace My3DGame
         protected EnemyDamageable m_Damageable;
         protected DetectionModule m_DetectionModule;
         protected Animator m_Animator;
+        protected CharacterController m_CharacterController;
 
         public MeleeWeapon meleeWeapon;
 
@@ -25,6 +27,11 @@ namespace My3DGame
 
         //회전
         [SerializeField] protected float rotateSpeed = 10f; //타겟을 향해 회전속도
+
+        //넉백
+        [SerializeField] protected float knockbackForce = 1.0f; //밀리는 크기
+        [SerializeField] protected float knockbackDuration = 0.2f; //넉백 시간
+
 
         //애니메이션 파라미터
         readonly int m_HashHurt = Animator.StringToHash("Hurt");
@@ -65,6 +72,7 @@ namespace My3DGame
             m_Damageable = GetComponent<EnemyDamageable>();
             m_DetectionModule = GetComponent<DetectionModule>();
             m_Animator = GetComponent<Animator>();
+            m_CharacterController = GetComponent<CharacterController>();
         }
 
         private void OnEnable()
@@ -120,10 +128,26 @@ namespace My3DGame
             m_Animator.SetTrigger(m_HashHurt);
 
             //넉백 : 뒤로 밀어낸다
-
+            Vector3 displacement = (-transform.forward) * knockbackForce;
+            StartCoroutine(KnockbackRoutine(displacement, knockbackDuration));
 
             //상태 변경
             ChangeState(typeof(IdleState));
+        }
+
+        IEnumerator KnockbackRoutine(Vector3 displacement, float duration)
+        {
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                float t = 1 - (elapsed / duration);
+                Vector3 move = displacement * t * Time.deltaTime / duration;
+                m_CharacterController.Move(move);
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
         }
 
         private void OnDie()
