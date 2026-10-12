@@ -24,13 +24,33 @@ namespace My3DGame
         VOICE,          //음성
     }
 
-
-    /*/// <summary>
-    /// 툴에 있는 이펙트 리스트 enum 정의
+    /// <summary>
+    /// 캐릭터 속성 정의
     /// </summary>
-    public enum EffectList
+    public enum CharacterAttribute
     {
-        None = -1,
+        Agility = 0,
+        Intellect,
+        Stamina,
+        Strength,
+        Health,
+        Mana,
+    }
 
-    }*/
+    /// <summary>
+    /// 아이템 종류 정의
+    /// </summary>
+    public enum ItemType
+    {
+        Helmet = 0,
+        Cheat = 1,
+        Pants = 2,
+        Boots = 3,
+        Pauldrons = 4,
+        Gloves = 5,
+        LeftWeapon = 6,
+        RightWeapon = 7,
+        Food,
+        Default,
+    }
 }
