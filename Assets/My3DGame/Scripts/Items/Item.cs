@@ -27,10 +27,21 @@ namespace My3DGame
         }
 
         //게임에서 사용하는 아이템 생성
-        //아이템 오브젝트를(정보) 가져와서 초기화
+        //아이템 오브젝트를(정보:아이디, 이름, 능력치 최대, 최소) 가져와서 생성
         public Item(ItemObjectSO itemObect)
         {
+            id = itemObect.data.id;
+            name = itemObect.data.name;
 
+            buffs = new ItemBuff[itemObect.data.buffs.Length];
+            for (int i = 0; i < buffs.Length; i++)
+            {
+                buffs[i] = new ItemBuff(itemObect.data.buffs[i].Min,
+                    itemObect.data.buffs[i].Max)
+                {
+                    stat = itemObect.data.buffs[i].stat
+                };
+            }
         }
         #endregion
     }

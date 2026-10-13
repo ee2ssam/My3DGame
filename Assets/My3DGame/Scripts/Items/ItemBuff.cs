@@ -14,8 +14,8 @@ namespace My3DGame
         public CharacterAttribute stat; //아이템 능력치 속성
         public int value;               //아이템 능력치
 
-        private int min;    //아이템 능력치의 최소값
-        private int max;    //아이템 능력치의 최대값
+        [SerializeField] private int min;    //아이템 능력치의 최소값
+        [SerializeField] private int max;    //아이템 능력치의 최대값
         #endregion
 
         #region Property

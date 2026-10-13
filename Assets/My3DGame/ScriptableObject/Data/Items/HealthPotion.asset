@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f8aa5723ea88c4aa4209494a13d8d3, type: 3}
+  m_Name: HealthPotion
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.ItemObjectSO
+  data:
+    id: -1
+    name: HelthPotion
+    buffs:
+    - stat: 4
+      value: 0
+      min: 100
+      max: 100
+  type: 8
+  isStackable: 1
+  shopPrice: 300
+  icon: {fileID: 21300000, guid: a14dd88c387c74f4993a12045a9a5712, type: 3}
+  modelPrefab: {fileID: 0}
