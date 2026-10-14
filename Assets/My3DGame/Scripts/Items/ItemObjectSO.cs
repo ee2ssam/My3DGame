@@ -11,9 +11,8 @@ namespace My3DGame
         #region Variables
         public Item data = new Item();  //아이템 아이디, 이름, 능력치
 
-        public ItemType type;           //아이템 종류
-        //인벤토리 저장시 하나의 슬롯에 다수를 누적 저장 가능 여부
-        public bool isStackable;
+        public ItemType type;           //아이템 종류        
+        public bool isStackable;        //인벤토리 저장시 하나의 슬롯에 다수를 누적 저장 가능 여부
         public int shopPrice;           //상점 구매 금액
         public Sprite icon;             //아이템 아이콘 이미지
         public GameObject modelPrefab;  //장비 아이템 프리팹 오브젝트

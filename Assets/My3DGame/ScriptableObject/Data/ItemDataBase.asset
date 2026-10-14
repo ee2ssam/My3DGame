@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9de6824e286c740936e61f83e76c42, type: 3}
   m_Name: ItemDataBase
   m_EditorClassIdentifier: Assembly-CSharp::My3DGame.ItemDataBaseSO
-  itemObjects: []
+  itemObjects:
+  - {fileID: 11400000, guid: fd115274921cfec41b07a330add7afad, type: 2}
+  - {fileID: 11400000, guid: b08a8309a8cacd64380124f2b84b8f95, type: 2}
+  - {fileID: 11400000, guid: dc8ee7fbac6f27f46a740c8d7918bc9b, type: 2}
+  - {fileID: 11400000, guid: c231d78662a398044a76b5050d90180d, type: 2}
+  - {fileID: 11400000, guid: 6c3cfd5e7b2c8ef43b06cc5a947308f4, type: 2}
