@@ -53,4 +53,14 @@ namespace My3DGame
         Food,
         Default,
     }
+
+    /// <summary>
+    /// 인벤토리 종류 정의
+    /// </summary>
+    public enum InventoryType
+    {
+        Inventory = 0,
+        Equiptment,
+        Shop,
+    }
 }

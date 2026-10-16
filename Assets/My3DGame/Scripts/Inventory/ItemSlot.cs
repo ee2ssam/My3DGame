@@ -22,6 +22,19 @@ namespace My3DGame
         public Action<ItemSlot> OnPreUpdate;
         //슬롯 갱신후에 등록된 함수를 호출해서 실행
         public Action<ItemSlot> OnPostUpdate;
+
+        //
+        public InventorySO parent;
+        #endregion
+
+        #region Property
+        public ItemObjectSO ItemObject
+        {
+            get
+            { 
+                return item.id >= 0 ? parent.dataBase.itemObjects[item.id] : null;
+            }
+        }
         #endregion
 
         #region Constructor

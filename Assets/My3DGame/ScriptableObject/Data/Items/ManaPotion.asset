@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ManaPotion
   m_EditorClassIdentifier: Assembly-CSharp::My3DGame.ItemObjectSO
   data:
-    id: -1
+    id: 4
     name: ManaPotion
     buffs:
     - stat: 5
@@ -22,6 +22,7 @@ MonoBehaviour:
       max: 50
   type: 8
   isStackable: 1
+  stackMax: 99
   shopPrice: 600
   icon: {fileID: 21300000, guid: c72e2d8b9b456ed4bb8a24d5fc6ccb87, type: 3}
   modelPrefab: {fileID: 0}

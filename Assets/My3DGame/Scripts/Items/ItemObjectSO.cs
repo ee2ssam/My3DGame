@@ -5,7 +5,7 @@ namespace My3DGame
     /// <summary>
     /// 아이템 데이터를 관리하는 스크립터블 오브젝트 클래스
     /// </summary>
-    [CreateAssetMenu(fileName = "New ItemObject", menuName = "Items/Item")]
+    [CreateAssetMenu(fileName = "New ItemObject", menuName = "ItemSystem/Item")]
     public class ItemObjectSO : ScriptableObject
     {
         #region Variables
@@ -13,6 +13,7 @@ namespace My3DGame
 
         public ItemType type;           //아이템 종류        
         public bool isStackable;        //인벤토리 저장시 하나의 슬롯에 다수를 누적 저장 가능 여부
+        public int stackMax = 1;            //하나의 슬롯에 누적할 수 있는 갯수
         public int shopPrice;           //상점 구매 금액
         public Sprite icon;             //아이템 아이콘 이미지
         public GameObject modelPrefab;  //장비 아이템 프리팹 오브젝트

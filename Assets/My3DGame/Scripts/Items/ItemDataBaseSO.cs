@@ -5,7 +5,7 @@ namespace My3DGame
     /// <summary>
     /// 아이템 오브젝트들을 관리하는 스크립터블 오브젝트
     /// </summary>
-    [CreateAssetMenu(fileName = "new ItemDataBase", menuName = "Items/Item DataBase")]
+    [CreateAssetMenu(fileName = "new ItemDataBase", menuName = "ItemSystem/Item DataBase")]
     public class ItemDataBaseSO : ScriptableObject
     {
         #region Variables
