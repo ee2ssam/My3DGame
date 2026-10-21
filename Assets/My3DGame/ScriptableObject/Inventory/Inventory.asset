@@ -20,112 +20,96 @@ MonoBehaviour:
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
     - item:
         id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 
-      parent: {fileID: 0}
   type: 0
   dataBase: {fileID: 11400000, guid: bdb3b42d8775ff740b5161d87380cb54, type: 2}
   savePath: /Inventory.json

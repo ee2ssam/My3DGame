@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3648559407757002035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 2226721664750892833}
   - component: {fileID: 6401449951924768959}
   - component: {fileID: 3898303477764372998}
+  - component: {fileID: 184566803494196481}
   m_Layer: 0
   m_Name: SlotPrefab
   m_TagString: Untagged
@@ -424,3 +425,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &184566803494196481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295394781868291609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8095b8cd7099eda408fe2baa8cfeb97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSlotUI
+  iconImage: {fileID: 5036701080560731343}
+  amountText: {fileID: 4374486537178384203}
+  selectImage: {fileID: 693193471491798615}

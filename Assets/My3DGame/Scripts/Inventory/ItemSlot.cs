@@ -23,8 +23,11 @@ namespace My3DGame
         //슬롯 갱신후에 등록된 함수를 호출해서 실행
         public Action<ItemSlot> OnPostUpdate;
 
-        //
-        public InventorySO parent;
+        //인벤토리UI 슬롯 생성시 값 셋팅
+        [NonSerialized]
+        public InventorySO parent;  //itemSlot를 가진 인벤토리 오브젝트
+        [NonSerialized]
+        public GameObject slotUI;   //아이템 슬롯(this)을 가지고 있는 UI 오브젝트
         #endregion
 
         #region Property
@@ -65,7 +68,7 @@ namespace My3DGame
             OnPreUpdate?.Invoke(this);
             this.item = _item;
             this.amount = _amount;
-            OnPostUpdate?.Invoke(this);
+            OnPostUpdate?.Invoke(this); //변경 후의 값을 적용
         }
 
         //슬롯 비우기, 슬롯에서 아이템 제거하기
