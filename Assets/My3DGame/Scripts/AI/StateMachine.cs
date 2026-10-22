@@ -40,7 +40,7 @@ namespace My3DGame
             m_CurrentState.OnEnter();       //상태 들어가기
             m_ElapseTime = 0f;
 
-            Debug.Log($"{initalState}상태로 처음 시작");
+            //Debug.Log($"{initalState}상태로 처음 시작");
         }
 
         //매개변수로 받은 상태를 상태 목록에 등록
@@ -86,7 +86,7 @@ namespace My3DGame
             m_CurrentState.OnEnter();
             m_ElapseTime = 0f;
 
-            Debug.Log($"{newType}상태로 변경");
+            //Debug.Log($"{newType}상태로 변경");
 
             return m_CurrentState;
         }
