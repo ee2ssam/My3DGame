@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace My3DGame
 {
@@ -24,6 +25,20 @@ namespace My3DGame
             {
                 GameObject go = Instantiate(slotPrefab, Vector3.zero,
                     Quaternion.identity, slotsParent);
+
+                //생성된 슬롯 오브젝트의 트리거에 이벤트 등록
+                AddEvent(go, EventTriggerType.PointerEnter,
+                    delegate { OnEnterSlot(go); });
+                AddEvent(go, EventTriggerType.PointerExit,
+                    delegate { OnExitSlot(go); });
+                AddEvent(go, EventTriggerType.BeginDrag,
+                    delegate { OnStartDrag(go); });
+                AddEvent(go, EventTriggerType.Drag,
+                    delegate { OnDrag(go); });
+                AddEvent(go, EventTriggerType.EndDrag,
+                    delegate { OnEndDrag(go); });
+                AddEvent(go, EventTriggerType.PointerClick,
+                    delegate { OnSelectSlot(go); });
 
                 //slotUIs에 등록
                 inventory.Slots[i].slotUI = go;

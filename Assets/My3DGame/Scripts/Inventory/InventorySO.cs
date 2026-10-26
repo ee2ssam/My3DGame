@@ -44,6 +44,13 @@ namespace My3DGame
         #endregion
 
         #region Custom Method
+        //아이템 아이디로 아이템을 생성하여 아이템 추가하기
+        public bool AddItem(int itemId)
+        {
+            Item newItem = new Item(dataBase.itemObjects[itemId]);
+            return AddItem(newItem, 1);
+        }
+
         //인벤토리에 아이템 추가
         public bool AddItem(Item item, int amont)
         {
@@ -101,7 +108,7 @@ namespace My3DGame
 
             //장착 가능 여부 체크
             if(itemA.CanPlaceInSlot(itemB.ItemObject)
-                || itemB.CanPlaceInSlot(itemA.ItemObject))
+                && itemB.CanPlaceInSlot(itemA.ItemObject))
             {
                 //스왑
                 ItemSlot tempSlot = new ItemSlot(itemA.item, itemA.amount);

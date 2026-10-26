@@ -15,26 +15,67 @@ MonoBehaviour:
   container:
     slots:
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
-      allowedItems: 
-      parent: {fileID: 0}
+        id: 0
+        name: Helmet
+        buffs:
+        - stat: 2
+          value: 6
+          min: 5
+          max: 10
+      amount: 1
+      allowedItems: 00000000
     - item:
-        id: -1
+        id: 0
         name: 
         buffs: []
       amount: 0
-      allowedItems: 
-      parent: {fileID: 0}
+      allowedItems: 01000000
     - item:
-        id: -1
+        id: 0
         name: 
         buffs: []
       amount: 0
-      allowedItems: 
-      parent: {fileID: 0}
+      allowedItems: 02000000
+    - item:
+        id: 1
+        name: Shoes
+        buffs:
+        - stat: 1
+          value: 8
+          min: 8
+          max: 13
+        - stat: 0
+          value: 4
+          min: 4
+          max: 8
+      amount: 1
+      allowedItems: 03000000
+    - item:
+        id: 0
+        name: 
+        buffs: []
+      amount: 0
+      allowedItems: 04000000
+    - item:
+        id: 0
+        name: 
+        buffs: []
+      amount: 0
+      allowedItems: 05000000
+    - item:
+        id: 2
+        name: Sword
+        buffs:
+        - stat: 3
+          value: 11
+          min: 8
+          max: 12
+        - stat: 0
+          value: 7
+          min: 5
+          max: 9
+      amount: 1
+      allowedItems: 0600000007000000
   type: 1
   dataBase: {fileID: 11400000, guid: bdb3b42d8775ff740b5161d87380cb54, type: 2}
   savePath: /Equipment.json
