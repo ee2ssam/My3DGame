@@ -53,6 +53,13 @@ namespace My3DGame
         {   
             inventory.EquipItem(itemSlot);
         }
+
+        public override void CloseUI()
+        {
+            base.CloseUI();
+
+            //스태틱 UI 닫을때 기능 추가
+        }
         #endregion
     }
 }

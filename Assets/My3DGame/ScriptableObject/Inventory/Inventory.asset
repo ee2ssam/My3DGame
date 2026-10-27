@@ -15,10 +15,14 @@ MonoBehaviour:
   container:
     slots:
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
+        id: 0
+        name: Helmet
+        buffs:
+        - stat: 2
+          value: 7
+          min: 5
+          max: 10
+      amount: 1
       allowedItems: 
     - item:
         id: -1
@@ -33,34 +37,62 @@ MonoBehaviour:
       amount: 0
       allowedItems: 
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
+        id: 1
+        name: Shoes
+        buffs:
+        - stat: 1
+          value: 8
+          min: 8
+          max: 13
+        - stat: 0
+          value: 6
+          min: 4
+          max: 8
+      amount: 1
       allowedItems: 
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
+        id: 2
+        name: Sword
+        buffs:
+        - stat: 3
+          value: 9
+          min: 8
+          max: 12
+        - stat: 0
+          value: 8
+          min: 5
+          max: 9
+      amount: 1
       allowedItems: 
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
+        id: 3
+        name: HelthPotion
+        buffs:
+        - stat: 4
+          value: 100
+          min: 100
+          max: 100
+      amount: 8
       allowedItems: 
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
+        id: 0
+        name: Helmet
+        buffs:
+        - stat: 2
+          value: 6
+          min: 5
+          max: 10
+      amount: 1
       allowedItems: 
     - item:
-        id: -1
-        name: 
-        buffs: []
-      amount: 0
+        id: 4
+        name: ManaPotion
+        buffs:
+        - stat: 5
+          value: 50
+          min: 50
+          max: 50
+      amount: 7
       allowedItems: 
     - item:
         id: -1

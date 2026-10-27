@@ -15,23 +15,19 @@ MonoBehaviour:
   container:
     slots:
     - item:
-        id: 0
-        name: Helmet
-        buffs:
-        - stat: 2
-          value: 6
-          min: 5
-          max: 10
-      amount: 1
+        id: -1
+        name: 
+        buffs: []
+      amount: 0
       allowedItems: 00000000
     - item:
-        id: 0
+        id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 01000000
     - item:
-        id: 0
+        id: -1
         name: 
         buffs: []
       amount: 0
@@ -41,23 +37,23 @@ MonoBehaviour:
         name: Shoes
         buffs:
         - stat: 1
-          value: 8
+          value: 9
           min: 8
           max: 13
         - stat: 0
-          value: 4
+          value: 5
           min: 4
           max: 8
       amount: 1
       allowedItems: 03000000
     - item:
-        id: 0
+        id: -1
         name: 
         buffs: []
       amount: 0
       allowedItems: 04000000
     - item:
-        id: 0
+        id: -1
         name: 
         buffs: []
       amount: 0
@@ -71,7 +67,7 @@ MonoBehaviour:
           min: 8
           max: 12
         - stat: 0
-          value: 7
+          value: 8
           min: 5
           max: 9
       amount: 1

@@ -30,6 +30,9 @@ namespace My3DGame
 
         //슬롯 선택
         protected GameObject selectedSlotObject = null; //현재 선택된 슬롯 오브젝트
+
+        //선택한 슬롯의 아이템 정보
+        public ItemInfoUI itemInfoUI;
         #endregion
 
         #region Unity Event Method
@@ -98,35 +101,35 @@ namespace My3DGame
         //인벤토리UI 오브젝트에 마우스가 들어오면 호출되는 함수
         public void OnEnterInterface(GameObject go)
         {
-            Debug.Log($"OnEnterInterface Object: {go.name}");
+            //Debug.Log($"OnEnterInterface Object: {go.name}");
             MouseData.inventoryUIMouseOver = go.GetComponent<InventoryUI>();
         }
 
         //인벤토리UI 오브젝트에서 마우스가 나가면 호출되는 함수
         public void OnExitInterface(GameObject go)
         {
-            Debug.Log($"OnExitInterface Object: {go.name}");
+            //Debug.Log($"OnExitInterface Object: {go.name}");
             MouseData.inventoryUIMouseOver = null;
         }
 
         //슬롯UI 오브젝트에 마우스가 들어오면 호출되는 함수
         public void OnEnterSlot(GameObject go)
         {
-            Debug.Log($"OnEnter Slot Object: {go.name}");
+            //Debug.Log($"OnEnter Slot Object: {go.name}");
             MouseData.slotObjectMouseOver = go;
         }
 
         //슬롯UI 오브젝트에 마우스가 나가면 호출되는 함수
         public void OnExitSlot(GameObject go)
         {
-            Debug.Log($"OnExit Slot Object: {go.name}");
+            //Debug.Log($"OnExit Slot Object: {go.name}");
             MouseData.slotObjectMouseOver = null;
         }
 
         //슬롯UI 오브젝트를 가지고 마우스로 드래그를 시작할때 호출
         public void OnStartDrag(GameObject go)
         {
-            Debug.Log($"OnStartDrag Slot Object: {go.name}");
+            //Debug.Log($"OnStartDrag Slot Object: {go.name}");
             MouseData.tempItemBeginDragged = CreateDragItemObect(go);
 
             //현재 선택된 슬롯 디셀렉
@@ -147,7 +150,7 @@ namespace My3DGame
         //슬롯UI 오브젝트를 가지고 마우스로 드래그를 끝낼때(드랍) 호출
         public void OnEndDrag(GameObject go)
         {
-            Debug.Log($"OnEndDrag Slot Object: {go.name}");
+            //Debug.Log($"OnEndDrag Slot Object: {go.name}");
             //임시 게임오브젝트 킬
             Destroy(MouseData.tempItemBeginDragged);
 
@@ -172,8 +175,13 @@ namespace My3DGame
         //슬롯UI 오브젝트를 선택시 호출 (마우스 클릭)
         public void OnSelectSlot(GameObject go)
         {
-            Debug.Log($"OnSelect Slot Object: {go.name}");
-
+            //Debug.Log($"OnSelect Slot Object: {go.name}");
+            //선택한 슬롯 오브젝트 체크
+            if(selectedSlotObject == go)
+            {
+                UpdateSelecSlot(null);
+                return;
+            }
 
             //선택한 슬롯
             ItemSlot slot = slotUIs[go];
@@ -228,13 +236,26 @@ namespace My3DGame
                     itemSlotUI.SelectSlot(false);
                 }
             }
+
+            //선택된 슬롯의 아이템 정보 보여주기
+            if(selectedSlotObject == null)
+            {
+                itemInfoUI.gameObject.SetActive(false);
+            }
+            else
+            {
+                itemInfoUI.gameObject.SetActive(true);
+                itemInfoUI.SetItemInfoUI(slotUIs[selectedSlotObject]);
+            }
         }
 
         //인벤토리 UI 창 닫기 
-        public void CloseUI()
+        public virtual void CloseUI()
         {
             //TO DO : 창을 닫을때 해야 할일    
 
+            //현재 선택된 슬롯 해제
+            UpdateSelecSlot(null);
         }
         #endregion
     }

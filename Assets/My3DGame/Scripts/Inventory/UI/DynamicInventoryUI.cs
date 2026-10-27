@@ -47,5 +47,32 @@ namespace My3DGame
             }
         }
         #endregion
+
+        #region Custom Method
+        public override void CloseUI()
+        {
+            base.CloseUI();
+
+            //다이나믹 UI 닫을때 기능 추가
+        }
+
+        //선택된 아이템 사용하기
+        public void UseItem()
+        {
+
+        }
+
+        //선택된 아이템 장착하기
+        public void EquipItem()
+        {
+
+        }
+
+        //선택된 아이템 판매하기
+        public void SellItem()
+        {
+
+        }
+        #endregion
     }
 }
