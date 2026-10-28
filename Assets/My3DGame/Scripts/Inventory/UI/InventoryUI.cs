@@ -240,12 +240,26 @@ namespace My3DGame
             //선택된 슬롯의 아이템 정보 보여주기
             if(selectedSlotObject == null)
             {
-                itemInfoUI.gameObject.SetActive(false);
+                if (inventory.type == InventoryType.Equiptment)
+                {
+                    itemInfoUI.SetEuipmentItemInfoUI(false);
+                }
+                else
+                {
+                    itemInfoUI.gameObject.SetActive(false);
+                }
             }
             else
             {
                 itemInfoUI.gameObject.SetActive(true);
-                itemInfoUI.SetItemInfoUI(slotUIs[selectedSlotObject]);
+                if(inventory.type == InventoryType.Inventory)
+                {
+                    itemInfoUI.SetInventoryItemInfoUI(slotUIs[selectedSlotObject]);
+                }
+                else if(inventory.type == InventoryType.Equiptment)
+                {
+                    itemInfoUI.SetEuipmentItemInfoUI(true);
+                }
             }
         }
 

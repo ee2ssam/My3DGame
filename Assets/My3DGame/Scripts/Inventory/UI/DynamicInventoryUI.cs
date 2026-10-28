@@ -11,6 +11,8 @@ namespace My3DGame
     public class DynamicInventoryUI : InventoryUI
     {
         #region Variables
+        public InventorySO equipment;   //장착 인벤토리 오브젝트
+
         public GameObject slotPrefab;   //아이템슬롯 UI 프리팹 오브젝트
         public Transform slotsParent;   //생성되는 슬롯오브젝트의 부모 오브젝트
         #endregion
@@ -59,19 +61,50 @@ namespace My3DGame
         //선택된 아이템 사용하기
         public void UseItem()
         {
+            //선택 오브젝트 체크
+            if (selectedSlotObject == null)
+                return;
 
+            if(inventory.UseItem(slotUIs[selectedSlotObject]))
+            {
+                //TO DO: 아이템 효과 구현
+                Debug.Log($"{slotUIs[selectedSlotObject].item.name} 아이템 효과 구현");
+            }
+
+            //현재 선택된 슬롯 해제
+            UpdateSelecSlot(null);
         }
 
         //선택된 아이템 장착하기
         public void EquipItem()
         {
+            //선택 오브젝트 체크
+            if (selectedSlotObject == null)
+                return;
+
+            equipment.EquipItem(slotUIs[selectedSlotObject]);
+
+            //현재 선택된 슬롯 해제
+            UpdateSelecSlot(null);
 
         }
 
         //선택된 아이템 판매하기
         public void SellItem()
         {
+            //선택 오브젝트 체크
+            if (selectedSlotObject == null)
+                return;
 
+            if(inventory.SellItem(slotUIs[selectedSlotObject]))
+            {
+                //아이템 판매 대금을 받는다.. 상점 가격의 절반
+                int price = (int)(slotUIs[selectedSlotObject].ItemObject.shopPrice / 2);
+                Debug.Log($"{price}에 판매하였습니다");
+            }
+
+            //현재 선택된 슬롯 해제
+            UpdateSelecSlot(null);
         }
         #endregion
     }

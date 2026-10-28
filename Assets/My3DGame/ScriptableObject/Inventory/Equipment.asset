@@ -33,18 +33,10 @@ MonoBehaviour:
       amount: 0
       allowedItems: 02000000
     - item:
-        id: 1
-        name: Shoes
-        buffs:
-        - stat: 1
-          value: 9
-          min: 8
-          max: 13
-        - stat: 0
-          value: 5
-          min: 4
-          max: 8
-      amount: 1
+        id: -1
+        name: 
+        buffs: []
+      amount: 0
       allowedItems: 03000000
     - item:
         id: -1
@@ -59,19 +51,17 @@ MonoBehaviour:
       amount: 0
       allowedItems: 05000000
     - item:
-        id: 2
-        name: Sword
-        buffs:
-        - stat: 3
-          value: 11
-          min: 8
-          max: 12
-        - stat: 0
-          value: 8
-          min: 5
-          max: 9
-      amount: 1
-      allowedItems: 0600000007000000
+        id: -1
+        name: 
+        buffs: []
+      amount: 0
+      allowedItems: 06000000
+    - item:
+        id: -1
+        name: 
+        buffs: []
+      amount: 0
+      allowedItems: 07000000
   type: 1
   dataBase: {fileID: 11400000, guid: bdb3b42d8775ff740b5161d87380cb54, type: 2}
   savePath: /Equipment.json

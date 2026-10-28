@@ -85,18 +85,31 @@ namespace My3DGame
         }
 
         //아이템 사용하기
-        public void UseItem(ItemSlot useSlot)
+        public bool UseItem(ItemSlot useSlot)
         {
             //슬롯 체크
             if(useSlot.item.id <= -1 || useSlot.amount <= 0)
             {
-                return;
+                return false;
             }
 
-            //TO DO: 아이템 효과 구현
-            Debug.Log($"{useSlot.item.name} 아이템 효과 구현");
-
             useSlot.AddAmount(-1);
+            return true;
+        }
+
+        //선택된 아이템 판매하기
+        public bool SellItem(ItemSlot sellSlot)
+        {
+            //슬롯 체크
+            if (sellSlot.item.id <= -1 || sellSlot.amount <= 0)
+            {
+                return false;
+            }
+
+            //아이템 수량 1개 제거
+            sellSlot.AddAmount(-1);
+
+            return true;
         }
 
         //아이템 바꿔치기
