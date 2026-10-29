@@ -13,6 +13,7 @@ namespace My3DGame
         #region Variables
         public GameObject[] staticSlots;
 
+        public InventorySO playerInventory;   //인벤토리 오브젝트
         #endregion
 
         #region abstract method
@@ -48,10 +49,53 @@ namespace My3DGame
         #endregion
 
         #region Custom Method
-        //매개 변수로 들어온 아이템 슬롯을 장착
+        /*//매개 변수로 들어온 아이템 슬롯을 장착
         public void Euip(ItemSlot itemSlot)
         {   
             inventory.EquipItem(itemSlot);
+        }*/
+
+        //선택한 슬롯의 아이템을 탈착한다
+        public void UnEquip()
+        {
+            //선택한 슬롯 오브젝트 체크
+            if (selectedSlotObject == null)
+                return;
+
+            //슬롯에 있는 아이템
+            Item item = slotUIs[selectedSlotObject].item;
+
+            //인벤 풀체크 하여 인벤토리에 넣고 슬롯 초기화
+            if(playerInventory.AddItem(item, 1) == true)
+            {
+                //아이템 제거하고 슬롯 초기화
+                slotUIs[selectedSlotObject].RemoveItem();
+                //선택 해제
+                UpdateSelecSlot(null);
+            }
+        }
+
+        //장착창에 있는 모든 아이템을 탈착한다
+        public void UnEquipAll()
+        {
+            foreach (var slotObejct in staticSlots)
+            {
+                //슬롯에 있는 아이템
+                Item item = slotUIs[slotObejct].item;
+
+                //빈 슬롯 체크
+                if(item.id <= -1 || slotUIs[slotObejct].amount <= 0)
+                {
+                    continue;
+                }
+
+                //인벤 풀체크 하여 인벤토리에 넣고 슬롯 초기화
+                if (playerInventory.AddItem(item, 1) == true)
+                {
+                    //아이템 제거하고 슬롯 초기화
+                    slotUIs[slotObejct].RemoveItem();
+                }
+            }
         }
 
         public override void CloseUI()
