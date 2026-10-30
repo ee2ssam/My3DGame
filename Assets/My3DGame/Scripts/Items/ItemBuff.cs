@@ -43,9 +43,9 @@ namespace My3DGame
 
         //ItemBuff가 가지고 있는 능력치(value)를 참조 매개변수
         //값에 더해서 다시 결과를 보내준다
-        public void AddValue(ref int baseValue)
+        public void AddValue(ref int addValue)
         {
-            baseValue += value;
+            addValue += value;
         }
         #endregion
     }

@@ -22,16 +22,81 @@ namespace My3DGame
         private List<IModifier> moidifers = new List<IModifier>();
         #endregion
 
+        #region Property
+        public int BaseValue
+        {
+            get
+            {
+                return baseValue;
+            }
+            set
+            {
+                baseValue = value;
+                UpdateModifiedValue();
+            }
+        }
+
+        public int ModifiedValue => modifiedValue;
+        #endregion
+
         #region Constructor
+        //생성자 - 값 변경시 호출되는 함수를 매개변수로 받아 이벤트 함수에 등록
         public ModifiableInt(Action<ModifiableInt> method = null)
         {
             //초기화
             modifiedValue = baseValue;
+            RegisterModifireEvent(method);
         }
         #endregion
 
         #region Custom Method
+        //이벤트 함수에 등록
+        private void RegisterModifireEvent(Action<ModifiableInt> method)
+        {
+            if(method == null)
+                return;
 
+            _OnModifiedValue += method;
+        }
+
+        //이벤트 함수에서 제거
+        private void RemoveModifireEvent(Action<ModifiableInt> method)
+        {
+            if (method == null)
+                return;
+
+            _OnModifiedValue -= method;
+        }
+
+        //속성 최종(연산 완료) 값 구하기
+        private void UpdateModifiedValue()
+        {
+            int addValue = 0;
+            foreach(var moidifer in moidifers)
+            {
+                moidifer.AddValue(ref addValue);
+            }
+
+            //최종값
+            modifiedValue = baseValue + addValue;
+
+            //최종값 구할때마다 등록된 함수 호출
+            _OnModifiedValue?.Invoke(this);
+        }
+
+        //속성 값 추가
+        public void AddModifier(IModifier modifier)
+        {
+            moidifers.Add(modifier);
+            UpdateModifiedValue();
+        }
+
+        //속성 값 제거
+        public void RemoveModifier(IModifier modifier)
+        {
+            moidifers.Remove(modifier);
+            UpdateModifiedValue();
+        }
         #endregion
     }
 }
