@@ -18,7 +18,7 @@ namespace My3DGame
         private bool isInitialize = false;
 
         //속성 값 변경시 등록된 함수 호출
-        public UnityAction<CharacterStatsSO> OnChangedStats;
+        public UnityAction OnChangedStats;
         #endregion
 
         #region Property
@@ -51,6 +51,11 @@ namespace My3DGame
             get { return userData.mana; }
             private set { userData.mana = value; }
         }
+
+        public float MaxHealth => GetModifiredValue(CharacterAttribute.Health);
+        public float MaxMana => GetModifiredValue(CharacterAttribute.Mana);
+        public float HealthRatio => Health / MaxHealth;
+        public float ManaRatio => Mana / MaxMana;
         #endregion
 
         #region Unity Event Method
@@ -93,15 +98,13 @@ namespace My3DGame
             Health = (float)GetModifiredValue(CharacterAttribute.Health);
             Mana = (float)GetModifiredValue(CharacterAttribute.Mana);
         }
-        #endregion
-
-        #region Custom Method
+        
         //모든 attribute의 value값이 각각 변경될때 마다 호출되는 함수
         private void OnMoidefiedValue(ModifiableInt value)
         {            
             if(OnChangedStats != null)
             {
-                OnChangedStats.Invoke(this);
+                OnChangedStats.Invoke();
             }
         }
 
@@ -134,10 +137,149 @@ namespace My3DGame
 
         #region userdata Method
         //레벨 - 레벨업
+        public bool AddExp(int amount)
+        {
+            bool isLevlup = false;
+
+            //경험치 누적
+            Exp += amount;
+                        
+            //레벨업 체크, 반복
+            while(Exp >= GetExpForLevelup(Level))
+            {
+                Exp -= GetExpForLevelup(Level);
+                Level++;
+
+                //레벨업 보상
+                //...
+
+                isLevlup = true;
+            }
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+
+            return isLevlup;
+        }
+
+        //(nowLevel)에서 레벨업에 필요한 경험치 가져오기
+        public int GetExpForLevelup(int nowLevel)
+        {
+            //경험치 공식, 경험치 테이블...
+            return nowLevel * 100;
+        }
 
         //골드
+        public void AddGold(int amount)
+        {
+            //overflow check(21억)
+
+            Gold += amount;
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+        }
+
+        public bool UseGold(int amount)
+        {
+            if (Gold < amount)
+                return false;
+
+            Gold -= amount;
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+
+            return true;
+        }
+
+        public bool EnoughGold(int amount)
+        {
+            if (Gold < amount)
+                return false;
+            
+            return true;
+        }
 
         //체력, 마나
+        public void AddMana(int amount)
+        {
+            Mana += amount;
+            
+            if(Mana > MaxMana)
+            {
+                Mana = MaxMana;
+            }
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+        }
+
+        public bool UseMana(int amount)
+        {
+            if (Mana < amount)
+                return false;
+
+            Mana -= amount;
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+
+            return true;
+        }
+
+        public bool EnoughMana(int amount)
+        {
+            if (Mana < amount)
+                return false;
+
+            return true;
+        }
+
+        public void AddHealth(int amount)
+        {
+            Health += amount;
+
+            if (Mana > MaxHealth)
+            {
+                Mana = MaxHealth;
+            }
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+        }
+
+        public void UseHealth(int amount)
+        {   
+            Health -= amount;
+
+            if(Health < 0f)
+                Health = 0f;
+
+            //속성값 변경시 등록된 함수 호출
+            if (OnChangedStats != null)
+            {
+                OnChangedStats.Invoke();
+            }
+        }
         #endregion
     }
 }

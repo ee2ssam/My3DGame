@@ -17611,6 +17611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5189735784052341417}
+  - component: {fileID: 5189735784052341418}
   m_Layer: 5
   m_Name: PlayerInGameUI
   m_TagString: Untagged
@@ -17817,7 +17818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2edcec4bdbe99a40a9a7c20a8ed1766, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92c920fbaabe13549ba94da903516df2, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26888,6 +26889,24 @@ RectTransform:
   m_AnchoredPosition: {x: 536, y: -300}
   m_SizeDelta: {x: 1073, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5189735784052341418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717916501267294010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcd017b8ccf6b94d81dded4fcfe8b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.PlayerUserDataUI
+  statsObejct: {fileID: 11400000, guid: 85d3ea432e0a85142b3cfcf98c13c085, type: 2}
+  healthBar: {fileID: 1897523274317854302}
+  manaBar: {fileID: 7573048341677738373}
+  levelText: {fileID: 6434997925738721290}
+  expText: {fileID: 4945921746396669849}
+  goldText: {fileID: 8469658547174289873}
 --- !u!114 &5256305284742179353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29788,6 +29807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8160636298999652177}
+  - component: {fileID: 8160636298999652178}
   m_Layer: 5
   m_Name: PlayerStatsUI
   m_TagString: Untagged
@@ -29942,7 +29962,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2edcec4bdbe99a40a9a7c20a8ed1766, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92c920fbaabe13549ba94da903516df2, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30410,6 +30430,23 @@ RectTransform:
   m_AnchoredPosition: {x: 80, y: -165}
   m_SizeDelta: {x: 150, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8160636298999652178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449426812249247148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b95ccf749bd418439aadde4200bb8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::My3DGame.PlayerStatsUI
+  statsObejct: {fileID: 11400000, guid: 85d3ea432e0a85142b3cfcf98c13c085, type: 2}
+  agilityText: {fileID: 309227235361205405}
+  intellectText: {fileID: 5642725257359344655}
+  staminaText: {fileID: 6404961884767697066}
+  strengthText: {fileID: 4295727220232257792}
 --- !u!114 &8161918696931999723
 MonoBehaviour:
   m_ObjectHideFlags: 0
