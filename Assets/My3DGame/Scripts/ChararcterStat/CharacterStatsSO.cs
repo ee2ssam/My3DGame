@@ -71,8 +71,8 @@ namespace My3DGame
         private void InitializeAttributes()
         {
             //초기화 체크
-            if (isInitialize)
-                return;
+            //if (isInitialize)
+            //    return;
 
             isInitialize = true;
 
@@ -84,10 +84,10 @@ namespace My3DGame
             }
 
             //attribute value 값 셋팅
-            SetBaseValue(CharacterAttribute.Agility, 100);
-            SetBaseValue(CharacterAttribute.Intellect, 100);
-            SetBaseValue(CharacterAttribute.Stamina, 100);
-            SetBaseValue(CharacterAttribute.Strength, 100);
+            SetBaseValue(CharacterAttribute.Agility, 10);
+            SetBaseValue(CharacterAttribute.Intellect, 10);
+            SetBaseValue(CharacterAttribute.Stamina, 10);
+            SetBaseValue(CharacterAttribute.Strength, 10);
             SetBaseValue(CharacterAttribute.Health, 100);
             SetBaseValue(CharacterAttribute.Mana, 100);
 

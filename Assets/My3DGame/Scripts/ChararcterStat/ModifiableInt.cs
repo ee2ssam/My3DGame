@@ -43,6 +43,8 @@ namespace My3DGame
         //생성자 - 값 변경시 호출되는 함수를 매개변수로 받아 이벤트 함수에 등록
         public ModifiableInt(Action<ModifiableInt> method = null)
         {
+            moidifers = new List<IModifier>();
+
             //초기화
             modifiedValue = baseValue;
             RegisterModifireEvent(method);

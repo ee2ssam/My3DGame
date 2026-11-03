@@ -15,16 +15,16 @@ MonoBehaviour:
   attributes:
   - type: 0
     value:
-      modifiedValue: 100
+      modifiedValue: 10
   - type: 1
     value:
-      modifiedValue: 100
+      modifiedValue: 10
   - type: 2
     value:
-      modifiedValue: 100
+      modifiedValue: 10
   - type: 3
     value:
-      modifiedValue: 100
+      modifiedValue: 10
   - type: 4
     value:
       modifiedValue: 100
@@ -32,8 +32,8 @@ MonoBehaviour:
     value:
       modifiedValue: 100
   userData:
-    level: 0
+    level: 1
     exp: 0
-    gold: 0
-    health: 0
-    mana: 0
+    gold: 1000
+    health: 100
+    mana: 100

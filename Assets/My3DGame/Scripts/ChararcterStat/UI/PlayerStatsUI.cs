@@ -11,6 +11,8 @@ namespace My3DGame
         #region Variables
         public CharacterStatsSO statsObejct;    //캐릭터 스탯 오브젝트
 
+        public InventorySO equipment;
+
         //텍스트
         public TextMeshProUGUI agilityText;
         public TextMeshProUGUI intellectText;
@@ -19,12 +21,28 @@ namespace My3DGame
         #endregion
 
         #region Unity Event Method
+        private void Awake()
+        {
+            if(equipment != null)
+            {
+                foreach (var slot in equipment.Slots)
+                {
+                    slot.OnPreUpdate += OnUnEquipItem;
+                    slot.OnPostUpdate += OnEquipItem;
+
+                    //강제로 슬롯 업데이트 실행
+                    slot.OnPostUpdate?.Invoke(slot);
+                }
+            }
+        }
+
         private void OnEnable()
         {
             if (statsObejct != null)
             {
                 statsObejct.OnChangedStats += UpdateStatsUI;
             }
+            UpdateStatsUI();
         }
 
         private void OnDisable()
@@ -43,6 +61,52 @@ namespace My3DGame
             intellectText.text = statsObejct.GetModifiredValue(CharacterAttribute.Intellect).ToString();
             staminaText.text = statsObejct.GetModifiredValue(CharacterAttribute.Stamina).ToString();
             strengthText.text = statsObejct.GetModifiredValue(CharacterAttribute.Strength).ToString();
+        }
+
+        //아이템 탈착시 stats 아이템 buff값 제거
+        private void OnUnEquipItem(ItemSlot itemSlot)
+        {
+            //슬롯 체크
+            if (itemSlot.ItemObject == null)
+                return;
+
+            //인벤토리 타입 체크
+            if (itemSlot.parent.type == InventoryType.Equiptment)
+            {
+                foreach (var buff in itemSlot.item.buffs)
+                {
+                    foreach (var attribute in statsObejct.attributes)
+                    {
+                        if(buff.stat == attribute.type)
+                        {
+                            attribute.value.RemoveModifier(buff);
+                        }
+                    }
+                }                
+            }
+        }
+
+        //아이템 탈착시 stats 아이템 buff값 제거
+        private void OnEquipItem(ItemSlot itemSlot)
+        {
+            //슬롯 체크
+            if (itemSlot.ItemObject == null)
+                return;
+
+            //인벤토리 타입 체크
+            if (itemSlot.parent.type == InventoryType.Equiptment)
+            {
+                foreach (var buff in itemSlot.item.buffs)
+                {
+                    foreach (var attribute in statsObejct.attributes)
+                    {
+                        if (buff.stat == attribute.type)
+                        {
+                            attribute.value.AddModifier(buff);
+                        }
+                    }
+                }
+            }
         }
         #endregion
     }
